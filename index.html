@@ -3,89 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5; url=https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy">
     <title>Fintech Redirect & Payment Continuity Gateway (2026 Enterprise Edition)</title>
     <style>
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --border-color: #30363d;
-            --text-main: #c9d1d9;
-            --text-heading: #f0f6fc;
+            --bg-dark: #0a0c10;
+            --card-bg: #12161f;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --border-gold: rgba(212, 175, 55, 0.3);
             --accent-blue: #58a6ff;
-            --accent-green: #2ea043;
-            --accent-gold: #d29922;
+            --border-color: #30363d;
         }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
+            background-color: var(--bg-dark);
             color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 40px 20px;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-gold);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(10, 12, 16, 1) 100%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .hero-title {
+            color: var(--gold-primary);
+            font-size: 2.3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .badge-container {
             display: flex;
             justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
         }
-        .main-container {
-            max-width: 850px;
-            width: 100%;
-        }
-        .redirect-box {
-            background-color: var(--card-bg);
-            border: 1px solid var(--accent-blue);
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-        }
-        .spinner {
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border-left-color: var(--accent-blue);
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .btn-primary {
-            display: inline-block;
-            background-color: #238636;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.2s;
-        }
-        .btn-primary:hover {
-            background-color: #2ea043;
-        }
+
         .badge {
-            display: inline-block;
-            background: rgba(88, 166, 255, 0.15);
-            color: var(--accent-blue);
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 10px;
         }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            color: var(--gold-primary);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+            color: #000;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .featured-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(18,22,31,1) 100%);
+            border: 2px solid var(--gold-primary);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .featured-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .doc-section {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 30px;
-            margin-bottom: 25px;
+            margin-top: 3rem;
             text-align: left;
         }
-        h1, h2, h3 { color: var(--text-heading); }
-        h1 { font-size: 1.8rem; margin-top: 0; }
-        h2 { font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 25px; }
+
+        h2.section-heading {
+            color: var(--gold-primary);
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 2rem;
+        }
+
         pre {
             background-color: #0d1117;
             border: 1px solid var(--border-color);
@@ -93,49 +175,98 @@
             border-radius: 6px;
             overflow-x: auto;
             color: #79c0ff;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
+
         ul, ol { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        a { color: var(--accent-blue); }
+        li { margin-bottom: 8px; color: var(--text-main); }
+        a { color: var(--accent-blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        footer {
+            border-top: 1px solid var(--border-gold);
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4rem;
+        }
     </style>
 </head>
 <body>
 
-<div class="main-container">
+    <header>
+        <h1 class="hero-title">⚡ Fintech Redirect & Payment Continuity Gateway</h1>
+        <p class="hero-subtitle">Institutional frameworks, legal dispute playbooks, and merchant recovery protocols for SaaS, E-Commerce, and High-Volume Merchants ($1M–$100M+ ARR).</p>
+        
+        <div class="badge-container">
+            <span class="badge">Visa VAMP 2026 Compliant</span>
+            <span class="badge">UCC § 4A-502 Framework</span>
+            <span class="badge">Institutional Edition</span>
+        </div>
+    </header>
 
-    <!-- REDIRECTION AUTOMATIQUE -->
-    <div class="redirect-box">
-        <div class="spinner"></div>
-        <div class="badge">SECURE GATEWAY FAILOVER ACTIVE</div>
-        <h2>Redirecting to Compliance Framework...</h2>
-        <p>You are being redirected to <strong>The Fintech Legal Trilogy (2026 Edition)</strong> institutional recovery suite.</p>
-        <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn-primary">Access Full Legal Trilogy ($149) →</a>
-    </div>
+    <div class="container">
 
-    <!-- DOCUMENTATION TECHNIQUE ET JURIDIQUE COMPLÈTE -->
-    <div class="doc-section">
-        <h1>⚡ Fintech Redirect & Payment Continuity Gateway</h1>
-        <p><strong>Version:</strong> 2026 Enterprise Edition | <strong>Scope:</strong> High-Volume Merchants ($1M–$100M+ ARR)</p>
-        <p>Client-side emergency payment failover & dynamic multi-MID transaction routing interface for SaaS, digital products, e-commerce, and high-risk merchants.</p>
+        <!-- Offre Bundle Principale -->
+        <div class="card featured-card">
+            <img src="images/Trilogy.jpg" alt="The Fintech Legal Trilogy">
+            <div class="card-body">
+                <span class="badge" style="width: fit-content; margin-bottom: 10px;">BUNDLE OFFICIEL — ÉCONOMISEZ $33</span>
+                <h2 class="card-title" style="font-size: 1.8rem; color: var(--gold-primary);">The Fintech Legal Trilogy (2026 Edition)</h2>
+                <p class="card-text">La suite institutionnelle complète regroupant les 3 manuels opérationnels (72 pages, 42 modules de conformité, modèles de mise en demeure et lettres d'escalade UCC § 4A-502).</p>
+                <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" target="_blank">Obtenir la Trilogie Complète ($149) →</a>
+            </div>
+        </div>
 
-        <h2>🏛️ Institutional Recovery Framework</h2>
-        <p>When primary processors (Stripe, PayPal, Adyen, Shopify Payments) trigger automated 180-day reserves or merchant account terminations, client-side routing alone is insufficient. Access the full operational suite:</p>
-        <ul>
-            <li><strong>The Payment Survival Guide:</strong> Unlocking Frozen Funds & Passing Risk Audits</li>
-            <li><strong>The Payment Continuity Protocol:</strong> 72-Hour Emergency Acquirer Activation</li>
-            <li><strong>The Stripe Compliance Audit Playbook:</strong> Radar Defense & MCC Reclassification</li>
-        </ul>
-        <p>👉 <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy"><strong>Download The Fintech Legal Trilogy (2026 Suite)</strong></a></p>
+        <h2 style="color: var(--gold-primary); margin-top: 3.5rem; text-align: center;">Manuels Individuels & Playbooks Institutionnels</h2>
 
-        <h2>📖 Multi-Rail Architecture Diagram</h2>
+        <!-- Grille des 3 livres -->
+        <div class="grid">
+            <!-- Livre 1 -->
+            <div class="card">
+                <img src="images/Payment survival guide.jpg" alt="The Payment Survival Guide">
+                <div class="card-body">
+                    <h3 class="card-title">Payment Survival Guide</h3>
+                    <p class="card-text">Débloquez vos capitaux, passez les audits de risques et gérez les réserves glissantes de 180 jours avec succès.</p>
+                    <a href="https://unfreezepayments.gumroad.com/l/payment-survival-guide" class="btn" target="_blank">Commander ($59)</a>
+                </div>
+            </div>
+
+            <!-- Livre 2 -->
+            <div class="card">
+                <img src="images/Stripe compliance.jpg" alt="Stripe Compliance Audit Playbook">
+                <div class="card-body">
+                    <h3 class="card-title">Stripe Compliance Audit Playbook</h3>
+                    <p class="card-text">Survivez aux révisions d'underwriting Stripe, débloquez vos comptes suspendus et ajustez votre taux VAMP.</p>
+                    <a href="https://unfreezepayments.gumroad.com/l/stripe-compliance-playbook" class="btn" target="_blank">Commander ($59)</a>
+                </div>
+            </div>
+
+            <!-- Livre 3 -->
+            <div class="card">
+                <img src="images/Payment continuity.jpg" alt="Payment Continuity Protocol">
+                <div class="card-body">
+                    <h3 class="card-title">Payment Continuity Protocol</h3>
+                    <p class="card-text">Protocole de secours en 72 heures : réacheminement multi-MID, redondance de paiements et survie post-résiliation.</p>
+                    <a href="https://unfreezepayments.gumroad.com/l/payment-continuity-protocol" class="btn" target="_blank">Commander ($69)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOCUMENTATION TECHNIQUE ET JURIDIQUE -->
+        <div class="doc-section">
+            <h2 class="section-heading" style="margin-top: 0;">🏛️ Institutional Recovery & Multi-Rail Architecture</h2>
+            <p>When primary processors (Stripe, PayPal, Adyen, Shopify Payments) trigger automated 180-day reserves or merchant account terminations, client-side routing alone is insufficient. Our framework provides direct statutory escalation paths under federal and commercial guidelines.</p>
+
+            <h2 class="section-heading">📖 Multi-Rail Architecture Diagram</h2>
 <pre>
                   ┌─────────────────────────────────────────┐
-                  │          Incoming Order / Checkout      │
+                  │         Incoming Order / Checkout       │
                   └────────────────────┬────────────────────┘
                                        │
                     ┌──────────────────┴──────────────────┐
-                    │ Client-side Failover Engine (JS/API) │
+                    │ Client-side Failover Engine (JS/API)│
                     └──────────────────┬──────────────────┘
                                        │
         ┌──────────────────────────────┼──────────────────────────────┐
@@ -145,37 +276,36 @@
 │ (Acquirer A)  │              │ (Acquirer B)  │              │ (ACH/BNPL/USDC│
 │ 60% Volume    │              │ 30% Volume    │              │ 10% Volume    │
 └───────┬───────┘              └───────┬───────┘              └───────┬───────┘
-        │ (Gateway Outage /            │ (Decline /                   │
+        │ (Gateway Outage /            │ (Declines /                  │
         │  Dispute Spike >0.75%)       │  Reserve Trigger)            │
         └──────────────► AUTO-FAILOVER └──────────────► AUTO-FAILOVER ┘
 </pre>
 
-        <h2>⚖️ Legal & Statutory Standards</h2>
-        <h3>1. UCC § 4A-502 & Bank Setoff Limitations</h3>
-        <p>Under <strong>Uniform Commercial Code (UCC) § 4A-502</strong>, a payment processor or acquiring bank may only hold merchant funds strictly necessary to cover quantifiable liabilities. Indefinite retention of 100% of receipts when chargeback ratios are below card scheme monitoring thresholds (1.0%) constitutes bad-faith conversion and breach of contract.</p>
+            <h2 class="section-heading">⚖️ Legal & Statutory Standards</h2>
+            
+            <h3>1. UCC § 4A-502 & Bank Setoff Limitations</h3>
+            <p>Under <strong>Uniform Commercial Code (UCC) § 4A-502</strong>, a payment processor or acquiring bank may only hold merchant funds strictly necessary to cover quantifiable liabilities. Indefinite retention of 100% of receipts when chargeback ratios are below card scheme monitoring thresholds (1.0%) constitutes bad-faith conversion and breach of contract.</p>
 
-        <h3>2. Visa VAMP (2026) & Mastercard ANCRM Thresholds</h3>
-        <ul>
-            <li><strong>Visa VAMP (2026 Rules):</strong> Unified monitoring triggers at <strong>0.9% dispute ratio</strong> and <strong>$75,000 monthly fraud volume</strong>.</li>
-            <li><strong>Mastercard ANCRM Framework:</strong> Tier 1 monitoring at <strong>1.0% / 100 chargebacks</strong>; Tier 2 at <strong>1.5% / 300 chargebacks</strong> with escalating monthly risk assessments.</li>
-        </ul>
+            <h3>2. Visa VAMP (2026) & Mastercard ANCRM Thresholds</h3>
+            <ul>
+                <li><strong>Visa VAMP (2026 Rules):</strong> Unified monitoring triggers at <strong>0.9% dispute ratio</strong> and <strong>$75,000 monthly fraud volume</strong>.</li>
+                <li><strong>Mastercard ANCRM Framework:</strong> Tier 1 monitoring at <strong>1.0% / 100 chargebacks</strong>; Tier 2 at <strong>1.5% / 300 chargebacks</strong> with escalating monthly risk assessments.</li>
+            </ul>
 
-        <h3>3. FTC Enforcement Standards</h3>
-        <p>Under FTC enforcement standards, digital merchants relying on automated compliance suffer strict liability for processor oversight failures. Shielding operations requires robust KYC/AUP defense audits and structured multi-MID compartmentalization.</p>
+            <h3>3. FTC Enforcement Standards</h3>
+            <p>Under FTC enforcement standards, digital merchants relying on automated compliance suffer strict liability for processor oversight failures. Shielding operations requires robust KYC/AUP defense audits and structured multi-MID compartmentalization.</p>
 
-        <h2>📚 Complete Playbook Index (72 Pages Total)</h2>
-        <ol>
-            <li><strong>The Payment Survival Guide (19 Pages):</strong> 7 Legal Levers to Release Frozen Funds (CFPB/FCA/AAA Arbitration), Reserve Step-Down Schedule, 12-Jurisdiction Banking Grid.</li>
-            <li><strong>The Payment Continuity Protocol (34 Pages):</strong> 24-Hour Triage Protocol, 15-Document Emergency Underwriting Dossier, MATCH/TMF Database Removal.</li>
-            <li><strong>The Stripe Compliance Audit Playbook (19 Pages):</strong> Stripe Radar Defense, MCC Classification (7372, 5734, 5968, 8999), 3DS 2.2 Liability Shift.</li>
-        </ol>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" style="display: inline-block; font-size: 1.1rem; padding: 15px 35px;" target="_blank">Get The Complete Fintech Legal Trilogy Now →</a>
+            </div>
+        </div>
 
-        <p style="text-align: center; margin-top: 30px;">
-            <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn-primary" style="font-size: 1.1rem; padding: 15px 30px;">Get The Complete Fintech Legal Trilogy Now →</a>
-        </p>
     </div>
 
-</div>
+    <footer>
+        <p>&copy; 2026 Fintech Redirect & Legal Compliance. All rights reserved.</p>
+        <p>Disclaimer: The information provided is for educational and strategic purposes and does not constitute formal legal counsel.</p>
+    </footer>
 
 </body>
 </html>
