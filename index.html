@@ -34,10 +34,8 @@
         h1 { color: var(--gold-primary); font-size: 2.1rem; margin-bottom: 0.5rem; }
         h2 { color: var(--gold-primary); font-size: 1.5rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
         p { color: var(--text-muted); }
-
         .hero-banner { text-align: center; margin: 2rem 0; }
         .hero-banner img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-gold); }
-
         .briefings-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -61,7 +59,6 @@
         .briefing-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px; }
         .read-link { color: var(--accent-blue); font-size: 0.85rem; font-weight: 500; text-decoration: none; }
         .read-link:hover { text-decoration: underline; }
-
         .calc-box {
             background: var(--card-bg);
             border: 2px solid var(--gold-primary);
@@ -102,17 +99,15 @@
         .metric-value { font-size: 2rem; font-weight: bold; margin: 10px 0; }
         .status-safe { color: var(--safe-green); }
         .status-danger { color: var(--danger-red); }
-
-        .glossary-box {
+        .archives-box, .glossary-box {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 20px 30px;
             margin-top: 2rem;
         }
-        .glossary-box ul { padding-left: 20px; }
-        .glossary-box li { margin-bottom: 10px; }
-
+        .archives-box ul, .glossary-box ul { padding-left: 20px; }
+        .archives-box li, .glossary-box li { margin-bottom: 10px; }
         .cta-box {
             background: var(--card-bg);
             border: 2px solid var(--gold-primary);
@@ -144,44 +139,44 @@
             <img src="images/banner.jpg" alt="Dark Gold Fintech Payment Continuity" onerror="this.src='banner.jpg'">
         </div>
 
-        <h2>Latest Technical Briefings</h2>
+        <h2>Latest Technical Briefings (Featured)</h2>
         <div class="briefings-grid">
 
             <div class="briefing-card">
                 <div>
                     <span class="briefing-tag">BRIEFING #01</span>
-                    <a href="articles/visa-vamp-2026-compliance-guide.html" class="briefing-title">Visa VAMP 2026 Compliance & Risk Mitigation Guide</a>
-                    <p class="briefing-desc">Navigating thresholds, monitoring programs, dispute audits, and merchant risk mitigation.</p>
+                    <a href="articles/5-precursor-signals-processor-termination.html" class="briefing-title">The 5 Precursor Signals of Impending Merchant Termination</a>
+                    <p class="briefing-desc">Identify the hidden automated risk triggers before your payment processor freezes payouts.</p>
                 </div>
-                <a href="articles/visa-vamp-2026-compliance-guide.html" class="read-link">Read Briefing →</a>
+                <a href="articles/5-precursor-signals-processor-termination.html" class="read-link">Read Briefing →</a>
             </div>
             <div class="briefing-card">
                 <div>
                     <span class="briefing-tag">BRIEFING #02</span>
-                    <a href="articles/mastercard-ancrm-chargeback-compliance.html" class="briefing-title">Mastercard ANCRM & Chargeback Compliance</a>
-                    <p class="briefing-desc">Managing Acquirer Excessive Chargeback Programs, dispute audits, and reserve escrows.</p>
+                    <a href="articles/unlocking-frozen-funds-ucc-4a-502.html" class="briefing-title">Unlocking Frozen Merchant Reserves Under UCC § 4A-502</a>
+                    <p class="briefing-desc">Legal and operational levers to contest arbitrary 180-day processor reserve retentions.</p>
                 </div>
-                <a href="articles/mastercard-ancrm-chargeback-compliance.html" class="read-link">Read Briefing →</a>
+                <a href="articles/unlocking-frozen-funds-ucc-4a-502.html" class="read-link">Read Briefing →</a>
             </div>
             <div class="briefing-card">
                 <div>
                     <span class="briefing-tag">BRIEFING #03</span>
-                    <a href="articles/multi-mid-failover-protocols.html" class="briefing-title">Multi-MID Failover Protocols & Payment Continuity Architectures</a>
-                    <p class="briefing-desc">Engineering resilient payment routing systems to eliminate single points of failure and processor lock-in.</p>
+                    <a href="articles/multi-mid-redundancy-architecture.html" class="briefing-title">Multi-MID Redundancy & Payment Continuity Architectures</a>
+                    <p class="briefing-desc">Eliminate single points of failure by distributing transaction volume across independent acquiring rails.</p>
                 </div>
-                <a href="articles/multi-mid-failover-protocols.html" class="read-link">Read Briefing →</a>
+                <a href="articles/multi-mid-redundancy-architecture.html" class="read-link">Read Briefing →</a>
             </div>
             <div class="briefing-card">
                 <div>
                     <span class="briefing-tag">BRIEFING #04</span>
-                    <a href="articles/etude-cas-recouvrement-147k.html" class="briefing-title">Étude de Cas : Récupération de 147 000 $ Bloqués sous UCC § 4A-502</a>
-                    <p class="briefing-desc">Retour d'expérience opérationnel et juridique sur la levée d'un gel de 180 jours.</p>
+                    <a href="articles/visa-vamp-mastercard-ancrm-2026.html" class="briefing-title">Navigating Visa VAMP & Mastercard ANCRM 2026 Standards</a>
+                    <p class="briefing-desc">Essential compliance thresholds for dispute ratios, fraud monitoring, and acquirer audits.</p>
                 </div>
-                <a href="articles/etude-cas-recouvrement-147k.html" class="read-link">Read Briefing →</a>
+                <a href="articles/visa-vamp-mastercard-ancrm-2026.html" class="read-link">Read Briefing →</a>
             </div>
         </div>
 
-        <!-- CALCULATEUR DE RISQUE INTERACTIF (LEAD MAGNET) -->
+        <!-- CALCULATEUR DE RISQUE -->
         <div class="calc-box">
             <span style="color: var(--gold-primary); font-weight: bold; font-size: 0.75rem; letter-spacing: 1px; display: block; margin-bottom: 5px;">INTERACTIVE TOOL</span>
             <h2 style="margin-top: 0; border: none; padding: 0;">Visa VAMP & Chargeback Risk Calculator</h2>
@@ -211,6 +206,17 @@
             </div>
         </div>
 
+        <h2>All Technical Briefings & Archives</h2>
+        <div class="archives-box">
+            <ul>
+<li><a href="articles/5-precursor-signals-processor-termination.html" style="color: var(--gold-primary); text-decoration: none;"><b>BRIEFING #01</b> — The 5 Precursor Signals of Impending Merchant Termination</a></li>
+<li><a href="articles/unlocking-frozen-funds-ucc-4a-502.html" style="color: var(--gold-primary); text-decoration: none;"><b>BRIEFING #02</b> — Unlocking Frozen Merchant Reserves Under UCC § 4A-502</a></li>
+<li><a href="articles/multi-mid-redundancy-architecture.html" style="color: var(--gold-primary); text-decoration: none;"><b>BRIEFING #03</b> — Multi-MID Redundancy & Payment Continuity Architectures</a></li>
+<li><a href="articles/visa-vamp-mastercard-ancrm-2026.html" style="color: var(--gold-primary); text-decoration: none;"><b>BRIEFING #04</b> — Navigating Visa VAMP & Mastercard ANCRM 2026 Standards</a></li>
+
+            </ul>
+        </div>
+
         <h2>Institutional Glossary & Legal References</h2>
         <div class="glossary-box">
             <ul>
@@ -227,6 +233,13 @@
             <p>Access complete legal frameworks, UCC § 4A-502 templates, arbitration demands, and institutional risk recovery guides.</p>
             <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" target="_blank">Access The Full Trilogy on Gumroad →</a>
         </div>
+
+        
+    <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
+        <p><b>Legal Disclaimer:</b> The content provided on UnfreezeStripe Advisory is for informational and educational purposes only and does not constitute formal legal, financial, or regulatory advice. High-risk merchant processing, account freezes, and chargeback mitigation involve complex legal frameworks (including UCC and card brand rules). Always consult with qualified legal counsel or licensed financial professionals before initiating legal disputes or altering payment architectures.</p>
+        <p>© 2026 UnfreezeStripe Advisory Hub. All rights reserved. Target: 10,000€ by 31/12/2026.</p>
+    </footer>
+
     </div>
 
     <script>
@@ -259,7 +272,6 @@
                 ctaContainer.style.display = 'none';
             }
         }
-        // Initial run
         calculateRisk();
     </script>
 </body>

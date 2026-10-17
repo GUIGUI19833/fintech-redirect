@@ -1,15 +1,17 @@
 import os
+import json
 import subprocess
 
 # --- CONFIGURATION INITIALE ---
 os.makedirs("articles", exist_ok=True)
 os.makedirs("glossary", exist_ok=True)
 index_path = "index.html"
+db_path = "articles_db.json"
 
 OBJECTIF_FINANCIER = 10000
 DATE_LIMITE = "31/12/2026"
 
-print(f"🎯 [OUROBOROS] Démarrage de la session — Objectif : {OBJECTIF_FINANCIER} € d'ici le {DATE_LIMITE}")
+print(f"🎯 [OUROBOROS] Démarrage — Stratégie de Teasing & Protection IP (Objectif : {OBJECTIF_FINANCIER} €)")
 
 # --- CATALOGUE DES PRODUITS GUMROAD ---
 GUMROAD_TRILOGY = "https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy"
@@ -17,71 +19,102 @@ GUMROAD_CONTINUITY = "https://unfreezepayments.gumroad.com/l/payment-continuity-
 GUMROAD_STRIPE_AUDIT = "https://unfreezepayments.gumroad.com/l/stripe-compliance-audit-playbook"
 GUMROAD_SURVIVAL = "https://unfreezepayments.gumroad.com/l/payment-survival-guide"
 
-# --- 1. LES BRIEFINGS PRINCIPAUX (GRILLE 2X2) ---
-articles_du_jour = [
+# --- BANQUE DE SUJETS STRATÉGIQUES (TEASERS ISSUS DES OUVRAGES) ---
+BANQUE_SUJETS = [
     {
-        "filename": "visa-vamp-2026-compliance-guide.html",
+        "filename": "5-precursor-signals-processor-termination.html",
         "briefing_id": "BRIEFING #01",
-        "title": "Visa VAMP 2026 Compliance & Risk Mitigation Guide",
-        "desc": "Navigating thresholds, monitoring programs, dispute audits, and merchant risk mitigation.",
+        "title": "The 5 Precursor Signals of Impending Merchant Termination",
+        "desc": "Identify the hidden automated risk triggers before your payment processor freezes payouts.",
         "gumroad_link": GUMROAD_SURVIVAL,
         "gumroad_title": "Get The Payment Survival Guide ($59) →",
         "content_body": """
-            <h2>1. Overview of Visa VAMP 2026 Updates</h2>
-            <p>Visa System Integrity Monitoring Program (VAMP) imposes strict compliance thresholds on merchant chargebacks and fraud ratios. Failing to meet these metrics exposes high-risk merchants to immediate acquirer fines and processor termination.</p>
-            <div class='callout'><b>Critical Metric:</b> Exceeding a 0.9% chargeback-to-transaction ratio for two consecutive cycles triggers automatic placement in the Visa Acquirer Monitoring Program.</div>
-            <h2>2. Escalation & Dispute Strategy</h2>
-            <p>Enforcing proper pre-arbitration protocols and submitting clear evidence of fulfillment are essential to contesting unfair acquirer holds.</p>
+            <h2>1. Recognizing Algorithmic Risk Triggers</h2>
+            <p>Payment processors deploy automated machine learning models that continuously recalculate merchant risk scores based on chargeback velocity, refund spikes, and fulfillment latency. Recognizing precursor signals—such as out-of-cycle KYC verification requests or sudden payout schedule shifts—allows merchants to execute pre-emptive mitigation before cash flow is seized[cite: 7, 27].</p>
+            <div class='callout'><b>Operational Warning Window:</b> In over 80% of analyzed cases, merchants experience clear precursor signals 5 to 14 days prior to a total account freeze[cite: 28].</div>
+            <h2>2. Why Frontline Support Fails</h2>
+            <p>Standard merchant support tickets cannot override automated risk determinations. Reinstatement requires structured, objective compliance evidence[cite: 6]. <em>For the complete 15-document emergency underwriting checklist and direct escalation workflows, consult the full Survival Guide.</em></p>
         """
     },
     {
-        "filename": "mastercard-ancrm-chargeback-compliance.html",
+        "filename": "unlocking-frozen-funds-ucc-4a-502.html",
         "briefing_id": "BRIEFING #02",
-        "title": "Mastercard ANCRM & Chargeback Compliance",
-        "desc": "Managing Acquirer Excessive Chargeback Programs, dispute audits, and reserve escrows.",
-        "gumroad_link": GUMROAD_STRIPE_AUDIT,
-        "gumroad_title": "Get The Stripe Compliance Audit Playbook ($59) →",
+        "title": "Unlocking Frozen Merchant Reserves Under UCC § 4A-502",
+        "desc": "Legal and operational levers to contest arbitrary 180-day processor reserve retentions.",
+        "gumroad_link": GUMROAD_TRILOGY,
+        "gumroad_title": "Access The Fintech Legal Trilogy ($149) →",
         "content_body": """
-            <h2>1. ANCRM Tier 1 & Tier 2 Thresholds</h2>
-            <p>Mastercard's Acquirer Excessive Chargeback Program (ECM) penalizes merchants exceeding acceptable dispute limits. Understanding the difference between Tier 1 and Tier 2 compliance is paramount to avoiding frozen merchant accounts (MIDs).</p>
-            <div class='callout'><b>Escrow Protection:</b> Implementing legal notices prevents acquirers from holding reserve funds beyond contractual timeline limits.</div>
-            <h2>2. Chargeback Reduction Framework</h2>
-            <p>Deploying pre-dispute alert systems (Ethoca / Verifi RDR) reduces merchant dispute volume before it impacts card brand ratios.</p>
+            <h2>1. The Legal Limits of Reserve Retention</h2>
+            <p>When processors terminate an account, they routinely freeze balances for 180 days under boilerplate clauses. However, under Uniform Commercial Code (UCC) § 4A-502 and common law principles, holding 100% of unencumbered funds when dispute ratios remain below network thresholds constitutes bad-faith retention[cite: 8].</p>
+            <div class='callout'><b>The 30-Day Escalation Pathway:</b> Recovery success relies on structured progression through formal legal demand letters, regulatory complaints (CFPB/FCA), and binding arbitration[cite: 8, 33].</div>
+            <h2>2. Executing Legal Leverage</h2>
+            <p>Formal legal demands bypass standard support queues by engaging institutional compliance counsel[cite: 8]. <em>The exact legal demand letter templates, Small Claims strategies, and AAA arbitration frameworks are fully detailed in the Legal Trilogy.</em></p>
         """
     },
     {
-        "filename": "multi-mid-failover-protocols.html",
+        "filename": "multi-mid-redundancy-architecture.html",
         "briefing_id": "BRIEFING #03",
-        "title": "Multi-MID Failover Protocols & Payment Continuity Architectures",
-        "desc": "Engineering resilient payment routing systems to eliminate single points of failure and processor lock-in.",
+        "title": "Multi-MID Redundancy & Payment Continuity Architectures",
+        "desc": "Eliminate single points of failure by distributing transaction volume across independent acquiring rails.",
         "gumroad_link": GUMROAD_CONTINUITY,
         "gumroad_title": "Get The Payment Continuity Protocol ($69) →",
         "content_body": """
-            <h2>1. Redundant Routing & Gateway Architecture</h2>
-            <p>Relying on a single payment gateway or MID exposes high-volume merchants to total operational shutdown when a freeze occurs. Multi-MID load balancing ensures continuous transaction routing.</p>
-            <div class='callout'><b>99.98% Uptime Target:</b> Dynamic failover rules automatically reroute declined or blocked traffic to secondary acquiring banks.</div>
-            <h2>2. Implementation Checklist</h2>
-            <p>Cascading authorization, MID health checks, and tokenization synchronization across independent payment processors.</p>
+            <h2>1. The Fragility of Single-Processor Models</h2>
+            <p>Relying exclusively on a single payment facilitator creates total operational exposure[cite: 10, 45]. High-volume digital enterprises must deploy a resilient multi-processor architecture that distributes volume across independent acquiring banks and separate corporate entities[cite: 10, 45].</p>
+            <div class='callout'><b>Uptime Benchmark:</b> Dual-MID load-balanced architectures achieve 99.98% operational uptime during sudden processor interruptions[cite: 10, 46].</div>
+            <h2>2. Compliant Load Balancing Rules</h2>
+            <p>Transaction routing must follow legitimate business segmentation (geography, product lines) rather than unapproved volume splitting designed to mask dispute ratios[cite: 10, 45]. <em>Step-by-step gateway routing specifications and multi-entity isolation blueprints are available in the Payment Continuity Protocol.</em></p>
         """
     },
     {
-        "filename": "etude-cas-recouvrement-147k.html",
+        "filename": "visa-vamp-mastercard-ancrm-2026.html",
         "briefing_id": "BRIEFING #04",
-        "title": "Étude de Cas : Récupération de 147 000 $ Bloqués sous UCC § 4A-502",
-        "desc": "Retour d'expérience opérationnel et juridique sur la levée d'un gel de 180 jours.",
-        "gumroad_link": GUMROAD_TRILOGY,
-        "gumroad_title": "Access The Full Fintech Legal Trilogy ($149) →",
+        "title": "Navigating Visa VAMP & Mastercard ANCRM 2026 Standards",
+        "desc": "Essential compliance thresholds for dispute ratios, fraud monitoring, and acquirer audits.",
+        "gumroad_link": GUMROAD_STRIPE_AUDIT,
+        "gumroad_title": "Get The Stripe Compliance Audit Playbook ($59) →",
         "content_body": """
-            <h2>1. Analyse de la Rétention Abusive</h2>
-            <p>Étude détaillée d'un gel d'actifs de $147k par un processeur de paiement majeur sous motif de risque algorithmique préventif.</p>
-            <div class='callout'><b>Action Légale :</b> Envoi d'une mise en demeure basée sur l'UCC § 4A-502 forçant l'examen manuel du dossier en 48h.</div>
-            <h2>2. Déblocage et Transfert des Fonds</h2>
-            <p>Méthodologie de restitution des réserves et mise en place d'un protocole d'arbitrage d'urgence.</p>
+            <h2>1. Unified Card Network Thresholds</h2>
+            <p>Card brands enforce strict compliance metrics. Visa VAMP consolidates dispute and fraud ratios under unified monitoring parameters, while Mastercard ANCRM penalizes excessive chargeback levels through escalating monthly assessments[cite: 18, 71].</p>
+            <div class='callout'><b>Critical Metric:</b> Crossing a 0.75% to 0.9% dispute ratio triggers mandatory program placement and potential acquirer fines[cite: 7, 18, 60, 71].</div>
+            <h2>2. Pre-Dispute Defense Systems</h2>
+            <p>Deploying automated alert systems (Verifi RDR and Ethoca) intercepts disputes before formal chargeback conversion occurs[cite: 6, 7, 44]. <em>For complete audit preparation checklists and statement descriptor optimization blueprints, access the Stripe Compliance Playbook.</em></p>
         """
     }
 ]
 
-# --- 2. TERMES DU GLOSSAIRE JURIDIQUE & SEO (/glossary/) ---
+# --- GESTION DE LA BASE DE DONNÉES LOCALE (ACCUMULATION) ---
+if os.path.exists(db_path):
+    with open(db_path, "r", encoding="utf-8") as f:
+        articles_enregistres = json.load(f)
+else:
+    articles_enregistres = []
+
+if not articles_enregistres:
+    articles_enregistres = BANQUE_SUJETS[:4]
+    with open(db_path, "w", encoding="utf-8") as f:
+        json.dump(articles_enregistres, f, indent=4)
+
+# Accumulation automatique du prochain sujet s'il en reste dans la banque
+filenames_actuels = [a["filename"] for a in articles_enregistres]
+for sujet in BANQUE_SUJETS:
+    if sujet["filename"] not in filenames_actuels:
+        articles_enregistres.append(sujet)
+        print(f"➕ [OUROBOROS] Nouvel article-teaser accumulé : {sujet['title']}")
+        break
+
+with open(db_path, "w", encoding="utf-8") as f:
+    json.dump(articles_enregistres, f, indent=4)
+
+# --- DISCLAIMER JURIDIQUE GLOBAL ---
+LEGAL_DISCLAIMER = """
+    <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
+        <p><b>Legal Disclaimer:</b> The content provided on UnfreezeStripe Advisory is for informational and educational purposes only and does not constitute formal legal, financial, or regulatory advice. High-risk merchant processing, account freezes, and chargeback mitigation involve complex legal frameworks (including UCC and card brand rules). Always consult with qualified legal counsel or licensed financial professionals before initiating legal disputes or altering payment architectures.</p>
+        <p>© 2026 UnfreezeStripe Advisory Hub. All rights reserved. Target: 10,000€ by 31/12/2026.</p>
+    </footer>
+"""
+
+# Glossaire SEO inchangé pour le maillage
 glossary_terms = [
     {
         "filename": "ucc-4a-502-funds-freeze.html",
@@ -113,8 +146,8 @@ glossary_terms = [
     }
 ]
 
-# --- GENERATION DES ARTICLES PRINCIPAUX ---
-for art in articles_du_jour:
+# --- GÉNÉRATION DES ARTICLES ---
+for art in articles_enregistres:
     art_path = os.path.join("articles", art["filename"])
     art_html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -176,17 +209,19 @@ for art in articles_du_jour:
         {art['content_body']}
 
         <div class="cta-box">
-            <h3 style="color: var(--gold-primary); margin-top: 0;">Recommended Playbook</h3>
-            <p>Unlock the complete legal frameworks and step-by-step dispute execution templates.</p>
+            <h3 style="color: var(--gold-primary); margin-top: 0;">Unlock Full Legal Templates & Protocols</h3>
+            <p>Access ready-to-use demand letters, step-by-step dispute escalation frameworks, and institutional audit checklists.</p>
             <a href="{art['gumroad_link']}" class="btn" target="_blank">{art['gumroad_title']}</a>
         </div>
+        
+        {LEGAL_DISCLAIMER}
     </div>
 </body>
 </html>"""
     with open(art_path, "w", encoding="utf-8") as f:
         f.write(art_html)
 
-# --- GENERATION DES PAGES DE GLOSSAIRE ---
+# --- GÉNÉRATION DU GLOSSAIRE ---
 for entry in glossary_terms:
     gloss_path = os.path.join("glossary", entry["filename"])
     gloss_html = f"""<!DOCTYPE html>
@@ -228,22 +263,25 @@ for entry in glossary_terms:
         <div class="def-box">
             <p style="color: var(--text-main); font-size: 1.1rem; margin: 0;"><b>Institutional Definition:</b> {entry['definition']}</p>
         </div>
-        <p>In high-risk merchant environments, understanding this concept is critical to preventing sudden processing halts and preserving operating capital.</p>
+        <p>Understanding this compliance standard is vital to preventing sudden processing interruptions and safeguarding operating capital.</p>
         
         <div class="cta-box">
-            <h3 style="color: var(--gold-primary); margin-top: 0;">Need Executive Implementation Frameworks?</h3>
-            <p>Access ready-to-use legal documents, audit checklists, and failover architectures.</p>
+            <h3 style="color: var(--gold-primary); margin-top: 0;">Access Complete Executive Frameworks</h3>
+            <p>Get ready-to-use audit defenses, legal templates, and gateway resilience architectures.</p>
             <a href="{entry['playbook_link']}" class="btn" target="_blank">{entry['playbook_text']}</a>
         </div>
+        
+        {LEGAL_DISCLAIMER}
     </div>
 </body>
 </html>"""
     with open(gloss_path, "w", encoding="utf-8") as f:
         f.write(gloss_html)
 
-# --- CONSTRUCTEUR DE LA GRILLE D'ARTICLES ET DU GLOSSAIRE POUR INDEX.HTML ---
+# --- GÉNÉRATION DE L'INDEX ---
+derniers_articles = articles_enregistres[-4:]
 cards_html = ""
-for art in articles_du_jour:
+for art in derniers_articles:
     cards_html += f"""
             <div class="briefing-card">
                 <div>
@@ -254,11 +292,14 @@ for art in articles_du_jour:
                 <a href="articles/{art['filename']}" class="read-link">Read Briefing →</a>
             </div>"""
 
+archives_html = ""
+for art in articles_enregistres:
+    archives_html += f'<li><a href="articles/{art["filename"]}" style="color: var(--gold-primary); text-decoration: none;"><b>{art["briefing_id"]}</b> — {art["title"]}</a></li>\n'
+
 glossary_links_html = ""
 for entry in glossary_terms:
     glossary_links_html += f'<li><a href="glossary/{entry["filename"]}" style="color: var(--gold-primary); text-decoration: none;">{entry["term"]}</a> — <span style="color: var(--text-muted); font-size: 0.85rem;">{entry["definition"][:80]}...</span></li>\n'
 
-# --- REGENÉRATION DE INDEX.HTML AVEC CALCULATEUR INTERACTIF ---
 index_full_html = f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -295,10 +336,8 @@ index_full_html = f"""<!DOCTYPE html>
         h1 {{ color: var(--gold-primary); font-size: 2.1rem; margin-bottom: 0.5rem; }}
         h2 {{ color: var(--gold-primary); font-size: 1.5rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }}
         p {{ color: var(--text-muted); }}
-
         .hero-banner {{ text-align: center; margin: 2rem 0; }}
         .hero-banner img {{ max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-gold); }}
-
         .briefings-grid {{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -322,7 +361,6 @@ index_full_html = f"""<!DOCTYPE html>
         .briefing-desc {{ color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px; }}
         .read-link {{ color: var(--accent-blue); font-size: 0.85rem; font-weight: 500; text-decoration: none; }}
         .read-link:hover {{ text-decoration: underline; }}
-
         .calc-box {{
             background: var(--card-bg);
             border: 2px solid var(--gold-primary);
@@ -363,17 +401,15 @@ index_full_html = f"""<!DOCTYPE html>
         .metric-value {{ font-size: 2rem; font-weight: bold; margin: 10px 0; }}
         .status-safe {{ color: var(--safe-green); }}
         .status-danger {{ color: var(--danger-red); }}
-
-        .glossary-box {{
+        .archives-box, .glossary-box {{
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 20px 30px;
             margin-top: 2rem;
         }}
-        .glossary-box ul {{ padding-left: 20px; }}
-        .glossary-box li {{ margin-bottom: 10px; }}
-
+        .archives-box ul, .glossary-box ul {{ padding-left: 20px; }}
+        .archives-box li, .glossary-box li {{ margin-bottom: 10px; }}
         .cta-box {{
             background: var(--card-bg);
             border: 2px solid var(--gold-primary);
@@ -405,12 +441,12 @@ index_full_html = f"""<!DOCTYPE html>
             <img src="images/banner.jpg" alt="Dark Gold Fintech Payment Continuity" onerror="this.src='banner.jpg'">
         </div>
 
-        <h2>Latest Technical Briefings</h2>
+        <h2>Latest Technical Briefings (Featured)</h2>
         <div class="briefings-grid">
 {cards_html}
         </div>
 
-        <!-- CALCULATEUR DE RISQUE INTERACTIF (LEAD MAGNET) -->
+        <!-- CALCULATEUR DE RISQUE -->
         <div class="calc-box">
             <span style="color: var(--gold-primary); font-weight: bold; font-size: 0.75rem; letter-spacing: 1px; display: block; margin-bottom: 5px;">INTERACTIVE TOOL</span>
             <h2 style="margin-top: 0; border: none; padding: 0;">Visa VAMP & Chargeback Risk Calculator</h2>
@@ -440,6 +476,13 @@ index_full_html = f"""<!DOCTYPE html>
             </div>
         </div>
 
+        <h2>All Technical Briefings & Archives</h2>
+        <div class="archives-box">
+            <ul>
+{archives_html}
+            </ul>
+        </div>
+
         <h2>Institutional Glossary & Legal References</h2>
         <div class="glossary-box">
             <ul>
@@ -452,6 +495,8 @@ index_full_html = f"""<!DOCTYPE html>
             <p>Access complete legal frameworks, UCC § 4A-502 templates, arbitration demands, and institutional risk recovery guides.</p>
             <a href="{GUMROAD_TRILOGY}" class="btn" target="_blank">Access The Full Trilogy on Gumroad →</a>
         </div>
+
+        {LEGAL_DISCLAIMER}
     </div>
 
     <script>
@@ -484,7 +529,6 @@ index_full_html = f"""<!DOCTYPE html>
                 ctaContainer.style.display = 'none';
             }}
         }}
-        // Initial run
         calculateRisk();
     </script>
 </body>
@@ -493,13 +537,13 @@ index_full_html = f"""<!DOCTYPE html>
 with open(index_path, "w", encoding="utf-8") as f:
     f.write(index_full_html)
 
-print(f"✅ [OUROBOROS] Succès ! Grille 2x2 + Glossaire SEO + Calculateur de Risque interactif générés.")
+print(f"✅ [OUROBOROS] Succès ! Teasers stratégiques générés et index mis à jour.")
 
-# --- DEPLOIEMENT AUTOMATIQUE GITHUB ---
+# --- DÉPLOIEMENT GIT ---
 try:
     subprocess.run(["git", "add", "."], check=True)
-    subprocess.run(["git", "commit", "-m", f"Ouroboros Session: Added Interactive Risk Calculator Lead Magnet (Target: {OBJECTIF_FINANCIER}E)"], check=True)
+    subprocess.run(["git", "commit", "-m", f"Ouroboros Teaser Strategy: High-value IP protected, Gumroad funnels active (Target: {OBJECTIF_FINANCIER}E)"], check=True)
     subprocess.run(["git", "push"], check=True)
-    print("🚀 [OUROBOROS] Déploiement GitHub réussi avec le Calculateur !")
+    print("🚀 [OUROBOROS] Déploiement GitHub réussi avec les teasers de conversion !")
 except Exception as e:
-    print(f"⚠️ [OUROBOROS] Information Git : {e}")
+    print(f"⚠️ [OUROBOROS] Info Git : {e}")
