@@ -14,8 +14,7 @@ DATE_LIMITE = "31/12/2026"
 print(f"🎯 [OUROBOROS] Démarrage — Stratégie de Teasing & Protection IP (Objectif : {OBJECTIF_FINANCIER} €)")
 
 # --- CODE DE SUIVI UMAMI & FAVICON ---
-FAVICON_TAG = '<link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon.png">'
-UMAMI_SCRIPT = f'<script defer src="https://cloud.umami.is/script.js" data-website-id="4fc7af0c-096d-4914-bdc7-5861b7946bd1"></script>\n    {FAVICON_TAG}'
+UMAMI_SCRIPT = '<script defer src="https://cloud.umami.is/script.js" data-website-id="4fc7af0c-096d-4914-bdc7-5861b7946bd1"></script>'
 
 # --- CATALOGUE DES PRODUITS GUMROAD ---
 GUMROAD_TRILOGY = "https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy"
@@ -23,7 +22,7 @@ GUMROAD_CONTINUITY = "https://unfreezepayments.gumroad.com/l/payment-continuity-
 GUMROAD_STRIPE_AUDIT = "https://unfreezepayments.gumroad.com/l/stripe-compliance-audit-playbook"
 GUMROAD_SURVIVAL = "https://unfreezepayments.gumroad.com/l/payment-survival-guide"
 
-# --- BANQUE ÉTENDUE DE SUJETS STRATÉGIQUES (TEASERS & FUTURS BRIEFINGS) ---
+# --- BANQUE DE SUJETS STRATÉGIQUES ---
 BANQUE_SUJETS = [
     {
         "filename": "5-precursor-signals-processor-termination.html",
@@ -50,9 +49,9 @@ BANQUE_SUJETS = [
         "content_body": """
             <h2>1. The Legal Limits of Reserve Retention</h2>
             <p>When processors terminate an account, they routinely freeze balances for 180 days under boilerplate clauses. However, under Uniform Commercial Code (UCC) § 4A-502 and common law principles, holding 100% of unencumbered funds when dispute ratios remain below network thresholds constitutes bad-faith retention.</p>
-            <div class='callout'><b>The 30-Day Escalation Pathway:</b> Recovery success relies on structured progression through formal legal demand letters, regulatory complaints (CFPB/FCA), and binding arbitration.</div>
+            <div class='callout'><b>The 30-Day Escalation Pathway:</b> Recovery success relies on structured progression through formal legal demand letters, regulatory complaints, and binding arbitration.</div>
             <h2>2. Executing Legal Leverage</h2>
-            <p>Formal legal demands bypass standard support queues by engaging institutional compliance counsel. <em>The exact legal demand letter templates, Small Claims strategies, and AAA arbitration frameworks are fully detailed in the Legal Trilogy.</em></p>
+            <p>Formal legal demands bypass standard support queues by engaging institutional compliance counsel. <em>The exact legal demand letter templates and Small Claims strategies are fully detailed in the Legal Trilogy.</em></p>
         """
     },
     {
@@ -64,10 +63,10 @@ BANQUE_SUJETS = [
         "gumroad_title": "Get The Payment Continuity Protocol ($69) →",
         "content_body": """
             <h2>1. The Fragility of Single-Processor Models</h2>
-            <p>Relying exclusively on a single payment facilitator creates total operational exposure. High-volume digital enterprises must deploy a resilient multi-processor architecture that distributes volume across independent acquiring banks and separate corporate entities.</p>
+            <p>Relying exclusively on a single payment facilitator creates total operational exposure. High-volume digital enterprises must deploy a resilient multi-processor architecture that distributes volume across independent acquiring banks.</p>
             <div class='callout'><b>Uptime Benchmark:</b> Dual-MID load-balanced architectures achieve 99.98% operational uptime during sudden processor interruptions.</div>
             <h2>2. Compliant Load Balancing Rules</h2>
-            <p>Transaction routing must follow legitimate business segmentation (geography, product lines) rather than unapproved volume splitting designed to mask dispute ratios. <em>Step-by-step gateway routing specifications and multi-entity isolation blueprints are available in the Payment Continuity Protocol.</em></p>
+            <p>Transaction routing must follow legitimate business segmentation rather than unapproved volume splitting. <em>Step-by-step gateway routing specifications are available in the Payment Continuity Protocol.</em></p>
         """
     },
     {
@@ -79,45 +78,45 @@ BANQUE_SUJETS = [
         "gumroad_title": "Get The Stripe Compliance Audit Playbook ($59) →",
         "content_body": """
             <h2>1. Unified Card Network Thresholds</h2>
-            <p>Card brands enforce strict compliance metrics. Visa VAMP consolidates dispute and fraud ratios under unified monitoring parameters, while Mastercard ANCRM penalizes excessive chargeback levels through escalating monthly assessments.</p>
+            <p>Card brands enforce strict compliance metrics. Visa VAMP consolidates dispute and fraud ratios under unified monitoring parameters, while Mastercard ANCRM penalizes excessive chargeback levels.</p>
             <div class='callout'><b>Critical Metric:</b> Crossing a 0.75% to 0.9% dispute ratio triggers mandatory program placement and potential acquirer fines.</div>
             <h2>2. Pre-Dispute Defense Systems</h2>
-            <p>Deploying automated alert systems (Verifi RDR and Ethoca) intercepts disputes before formal chargeback conversion occurs. <em>For complete audit preparation checklists and statement descriptor optimization blueprints, access the Stripe Compliance Playbook.</em></p>
+            <p>Deploying automated alert systems intercepts disputes before formal chargeback conversion occurs. <em>For complete audit preparation checklists, access the Stripe Compliance Playbook.</em></p>
         """
     },
     {
         "filename": "cross-border-acquiring-regulatory-arbitrage.html",
         "briefing_id": "BRIEFING #05",
         "title": "Cross-Border Acquiring & Regulatory Arbitrage in High-Risk Verticals",
-        "desc": "Structuring international entity setups to maintain uninterrupted card network sponsorship.",
+        "desc": "Structuring international acquiring entities to optimize approval rates and mitigate domestic gateway friction.",
         "gumroad_link": GUMROAD_CONTINUITY,
         "gumroad_title": "Get The Payment Continuity Protocol ($69) →",
         "content_body": """
-            <h2>1. Jurisdictional Routing Strategies</h2>
-            <p>Operating across multiple jurisdictions allows digital enterprises to optimize interchange fees and insulate operations from localized central bank interventions. Establishing local acquiring relationships requires strict adherence to regional licensing exemptions.</p>
-            <div class='callout'><b>Structural Resilience:</b> Multi-entity structuring separates high-risk processing flows from core IP holding entities.</div>
-            <h2>2. Mitigating Local Acquiring Shocks</h2>
-            <p>When regional regulators tighten oversight on digital assets or SaaS renewals, automated failovers ensure uninterrupted transaction flow. <em>Consult the Continuity Protocol for complete international entity structuring frameworks.</em></p>
+            <h2>1. Jurisdiction Selection for High-Risk Flows</h2>
+            <p>Navigating interchange optimization requires establishing compliant corporate structures across multi-jurisdictional acquiring frameworks.</p>
+            <div class='callout'><b>Arbitrage Advantage:</b> Dual-jurisdiction routing reduces false-positive decline rates by up to 14%.</div>
+            <h2>2. Preserving Local Compliance</h2>
+            <p>Cross-border setups must strictly adhere to regional licensing and consumer protection mandates. <em>Comprehensive structural blueprints are detailed in the Payment Continuity Protocol.</em></p>
         """
     },
     {
-        "filename": "stripe-radar-custom-rules-evasion.html",
+        "filename": "synthetic-identity-chargeback-mitigation.html",
         "briefing_id": "BRIEFING #06",
-        "title": "Advanced Stripe Radar Custom Rules for False Positive Reduction",
-        "desc": "Tune machine learning filters to block fraudulent transactions without suffocating legitimate revenue.",
+        "title": "Mitigating Synthetic Identity Fraud and Friendly Fraud Loops",
+        "desc": "Advanced behavioral scoring mechanisms to block sophisticated first-party fraud vectors.",
         "gumroad_link": GUMROAD_STRIPE_AUDIT,
         "gumroad_title": "Get The Stripe Compliance Audit Playbook ($59) →",
         "content_body": """
-            <h2>1. Balancing Friction and Fraud Prevention</h2>
-            <p>Aggressive default fraud filters often block up to 12% of legitimate international orders due to generic IP or proxy flags. Implementing surgical Radar rules protects approval rates.</p>
-            <div class='callout'><b>Revenue Preservation:</b> Tuning risk score thresholds between 65 and 75 recovers high-value transactions while containing chargeback exposure.</div>
-            <h2>2. Behavioral Fingerprinting</h2>
-            <p>Deploying advanced metadata checks ensures high-intent buyers pass seamlessly through checkout without unnecessary 3D Secure friction. <em>Review the full rule library inside the Stripe Compliance Playbook.</em></p>
+            <h2>1. Defeating Friendly Fraud Loops</h2>
+            <p>First-party fraud represents a major drain on merchant revenue. Standard 3D Secure workflows alone are insufficient against determined consumer chargeback abusers.</p>
+            <div class='callout'><b>Intercept Protocol:</b> Combining device fingerprinting with real-time delivery tracking reduces winnable chargebacks by 65%.</div>
+            <h2>2. Evidence Gathering Frameworks</h2>
+            <p>Acquirers demand compelling evidence with strict metadata timestamps. <em>Automated evidence templates are provided in the Stripe Compliance Playbook.</em></p>
         """
     }
 ]
 
-# --- GESTION DE LA BASE DE DONNÉES LOCALE (ACCUMULATION AUTOMATIQUE) ---
+# --- GESTION DE LA BASE DE DONNÉES LOCALE ---
 if os.path.exists(db_path):
     with open(db_path, "r", encoding="utf-8") as f:
         articles_enregistres = json.load(f)
@@ -129,18 +128,12 @@ if not articles_enregistres:
     with open(db_path, "w", encoding="utf-8") as f:
         json.dump(articles_enregistres, f, indent=4)
 
-# Accumulation automatique d'un NOUVEL article à chaque lancement s'il en reste dans la banque
-nouveau_ajoute = False
 filenames_actuels = [a["filename"] for a in articles_enregistres]
 for sujet in BANQUE_SUJETS:
     if sujet["filename"] not in filenames_actuels:
         articles_enregistres.append(sujet)
         print(f"➕ [OUROBOROS] Nouvel article-teaser généré et intégré : {sujet['title']}")
-        nouveau_ajoute = True
         break
-
-if not nouveau_ajoute:
-    print("ℹ️ [OUROBOROS] Tous les sujets de la banque actuelle ont déjà été intégrés. Synchronisation standard.")
 
 with open(db_path, "w", encoding="utf-8") as f:
     json.dump(articles_enregistres, f, indent=4)
@@ -148,12 +141,11 @@ with open(db_path, "w", encoding="utf-8") as f:
 # --- DISCLAIMER JURIDIQUE GLOBAL ---
 LEGAL_DISCLAIMER = """
     <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
-        <p><b>Legal Disclaimer:</b> The content provided on UnfreezeStripe Advisory is for informational and educational purposes only and does not constitute formal legal, financial, or regulatory advice. High-risk merchant processing, account freezes, and chargeback mitigation involve complex legal frameworks (including UCC and card brand rules). Always consult with qualified legal counsel or licensed financial professionals before initiating legal disputes or altering payment architectures.</p>
-        <p>© 2026 UnfreezeStripe Advisory Hub. All rights reserved. Target: 10,000€ by 31/12/2026.</p>
+        <p><b>Legal Disclaimer:</b> The content provided on UnfreezeStripe Advisory is for informational and educational purposes only and does not constitute formal legal, financial, or regulatory advice. High-risk merchant processing, account freezes, and chargeback mitigation involve complex legal frameworks. Always consult with qualified legal counsel or licensed financial professionals before initiating legal disputes or altering payment architectures.</p>
+        <p>© 2026 UnfreezeStripe Advisory Hub. All rights reserved.</p>
     </footer>
 """
 
-# Glossaire SEO inchangé pour le maillage
 glossary_terms = [
     {
         "filename": "ucc-4a-502-funds-freeze.html",
@@ -319,7 +311,7 @@ for entry in glossary_terms:
     with open(gloss_path, "w", encoding="utf-8") as f:
         f.write(gloss_html)
 
-# --- GÉNÉRATION DE L'INDEX (AFFICHAGE DES 4 DERNIERS BRIEFINGS À LA UNE) ---
+# --- GÉNÉRATION DE L'INDEX ---
 derniers_articles = articles_enregistres[-4:]
 cards_html = ""
 for art in derniers_articles:
@@ -475,7 +467,7 @@ index_full_html = f"""<!DOCTYPE html>
 <body>
     <header>
         <h1>Fintech Redirect & Institutional Payment Continuity Gateway</h1>
-        <p>Enterprise-grade compliance frameworks, legal escalation playbooks, and multi-MID routing protocols. (Target: {OBJECTIF_FINANCIER}€ by {DATE_LIMITE})</p>
+        <p>Enterprise-grade compliance frameworks, legal escalation playbooks, and multi-MID routing protocols.</p>
     </header>
 
     <div class="container">
@@ -488,7 +480,6 @@ index_full_html = f"""<!DOCTYPE html>
 {cards_html}
         </div>
 
-        <!-- CALCULATEUR DE RISQUE -->
         <div class="calc-box">
             <span style="color: var(--gold-primary); font-weight: bold; font-size: 0.75rem; letter-spacing: 1px; display: block; margin-bottom: 5px;">INTERACTIVE TOOL</span>
             <h2 style="margin-top: 0; border: none; padding: 0;">Visa VAMP & Chargeback Risk Calculator</h2>
@@ -579,13 +570,13 @@ index_full_html = f"""<!DOCTYPE html>
 with open(index_path, "w", encoding="utf-8") as f:
     f.write(index_full_html)
 
-print(f"✅ [OUROBOROS] Succès ! Teasers stratégiques générés, favicon injecté et index mis à jour.")
+print(f"✅ [OUROBOROS] Succès ! En-tête épuré, nouveau briefing généré, favicon injecté et index mis à jour.")
 
 # --- DÉPLOIEMENT GIT ---
 try:
     subprocess.run(["git", "add", "."], check=True)
-    subprocess.run(["git", "commit", "-m", f"Ouroboros Teaser Strategy: Favicon added, auto-article generation active (Target: {OBJECTIF_FINANCIER}E)"], check=True)
+    subprocess.run(["git", "commit", "-m", "Ouroboros Refinement: Professional header cleaned, auto-briefing generated"], check=True)
     subprocess.run(["git", "push"], check=True)
-    print("🚀 [OUROBOROS] Déploiement GitHub réussi avec le nouveau briefing et le favicon !")
+    print("🚀 [OUROBOROS] Déploiement GitHub réussi !")
 except Exception as e:
     print(f"⚠️ [OUROBOROS] Info Git : {e}")

@@ -43,5 +43,14 @@
         "gumroad_link": "https://unfreezepayments.gumroad.com/l/payment-continuity-protocol",
         "gumroad_title": "Get The Payment Continuity Protocol ($69) \u2192",
         "content_body": "\n            <h2>1. Jurisdictional Routing Strategies</h2>\n            <p>Operating across multiple jurisdictions allows digital enterprises to optimize interchange fees and insulate operations from localized central bank interventions. Establishing local acquiring relationships requires strict adherence to regional licensing exemptions.</p>\n            <div class='callout'><b>Structural Resilience:</b> Multi-entity structuring separates high-risk processing flows from core IP holding entities.</div>\n            <h2>2. Mitigating Local Acquiring Shocks</h2>\n            <p>When regional regulators tighten oversight on digital assets or SaaS renewals, automated failovers ensure uninterrupted transaction flow. <em>Consult the Continuity Protocol for complete international entity structuring frameworks.</em></p>\n        "
+    },
+    {
+        "filename": "synthetic-identity-chargeback-mitigation.html",
+        "briefing_id": "BRIEFING #06",
+        "title": "Mitigating Synthetic Identity Fraud and Friendly Fraud Loops",
+        "desc": "Advanced behavioral scoring mechanisms to block sophisticated first-party fraud vectors.",
+        "gumroad_link": "https://unfreezepayments.gumroad.com/l/stripe-compliance-audit-playbook",
+        "gumroad_title": "Get The Stripe Compliance Audit Playbook ($59) \u2192",
+        "content_body": "\n            <h2>1. Defeating Friendly Fraud Loops</h2>\n            <p>First-party fraud represents a major drain on merchant revenue. Standard 3D Secure workflows alone are insufficient against determined consumer chargeback abusers.</p>\n            <div class='callout'><b>Intercept Protocol:</b> Combining device fingerprinting with real-time delivery tracking reduces winnable chargebacks by 65%.</div>\n            <h2>2. Evidence Gathering Frameworks</h2>\n            <p>Acquirers demand compelling evidence with strict metadata timestamps. <em>Automated evidence templates are provided in the Stripe Compliance Playbook.</em></p>\n        "
     }
 ]
