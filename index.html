@@ -64,7 +64,21 @@
             color: var(--text-muted);
             font-size: 1.1rem;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0 auto 2rem auto;
+        }
+
+        .banner-container {
+            max-width: 900px;
+            margin: 0 auto 2.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-gold);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
         }
 
         main {
@@ -191,6 +205,11 @@
     <header>
         <h1 class="header-title">Fintech Redirect & Institutional Payment Continuity Gateway</h1>
         <p class="header-subtitle">Enterprise-grade compliance frameworks, legal escalation playbooks, and multi-MID routing protocols for high-volume processors.</p>
+        
+        <!-- Banner Graphic Integration -->
+        <div class="banner-container">
+            <img src="images/banner.jpg" alt="Dark Gold Fintech Payment Continuity Banner">
+        </div>
     </header>
 
     <main>
@@ -198,7 +217,7 @@
 
         <div class="articles-grid">
             <!-- Briefing #01 Card -->
-            <div class="article-card">
+            <div class="articles-card article-card">
                 <span class="badge">Briefing #01</span>
                 <h3>Visa VAMP 2026 Compliance Guide</h3>
                 <p>Detailed analysis of Visa's updated VAMP thresholds, chargeback ratio calculation algorithms, and automated mitigation strategies.</p>
