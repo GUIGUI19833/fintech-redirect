@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
-    <meta name="google-site-verification" content="5gC6LKaMKXwpW0203u9kLDDTliiGmMpnXYySiiiKQWU" />
+    <meta name="google-site-verification" content="5gC6LKaMKXwpW0203u9kLDDT1iiGmMpnXYySiiiKQWU" />
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fintech Redirect & Payment Continuity Gateway (2026 Enterprise Edition)</title>
-    
+
     <!-- OPEN GRAPH & SOCIAL MEDIA METADATA -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://guigui19833.github.io/fintech-redirect/">
@@ -38,273 +38,215 @@
         }
 
         body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
         header {
+            background: linear-gradient(180deg, #161b22 0%, var(--bg-dark) 100%);
             border-bottom: 1px solid var(--border-gold);
-            padding: 2.5rem 1rem;
+            padding: 3rem 1.5rem 2rem;
             text-align: center;
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(10, 12, 16, 1) 100%);
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        .hero-title {
-            color: var(--gold-primary);
-            font-size: 2.3rem;
-            margin-bottom: 0.5rem;
+        .header-title {
+            font-size: 2.2rem;
+            color: var(--gold-light);
+            margin: 0 0 0.5rem 0;
             letter-spacing: -0.5px;
         }
 
-        .hero-subtitle {
+        .header-subtitle {
             color: var(--text-muted);
-            font-size: 1.15rem;
-            max-width: 800px;
-            margin: 0 auto 1.5rem auto;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
         }
 
-        .badge-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
+        .banner-container {
+            max-width: 900px;
+            margin: 0 auto 2.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-gold);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .article-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-primary);
         }
 
         .badge {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--border-gold);
-            color: var(--gold-light);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 2.5rem 0;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-gold);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-            border-bottom: 1px solid var(--border-gold);
-        }
-
-        .card-body {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card-title {
+            align-self: flex-start;
+            background-color: rgba(212, 175, 55, 0.15);
             color: var(--gold-primary);
-            font-size: 1.3rem;
-            margin-top: 0;
-            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
         }
 
-        .card-text {
+        .article-card h3 {
+            margin: 0 0 0.8rem 0;
+            color: #ffffff;
+            font-size: 1.2rem;
+        }
+
+        .article-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
+            margin-bottom: 1.2rem;
             flex-grow: 1;
-            margin-bottom: 1.5rem;
         }
 
-        .btn {
-            display: block;
-            text-align: center;
-            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
-            color: #000;
-            font-weight: bold;
-            padding: 12px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        .featured-card {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(18,22,31,1) 100%);
-            border: 2px solid var(--gold-primary);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .featured-card {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .doc-section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 3rem;
-            text-align: left;
-        }
-
-        h2.section-heading {
-            color: var(--gold-primary);
-            font-size: 1.4rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-top: 2rem;
-        }
-
-        .article-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
-        }
-
-        .article-item {
-            padding: 15px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .article-item:last-child {
-            border-bottom: none;
-        }
-
-        .article-title {
-            font-size: 1.1rem;
-            font-weight: bold;
+        .read-more {
             color: var(--accent-blue);
             text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
-        .article-title:hover {
+        .read-more:hover {
             text-decoration: underline;
         }
 
-        .article-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 4px;
+        .trilogy-cta {
+            background: linear-gradient(135deg, #161b22 0%, #1c2128 100%);
+            border: 1px solid var(--gold-primary);
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
         }
 
-        pre {
-            background-color: #0d1117;
-            border: 1px solid var(--border-color);
-            padding: 15px;
+        .trilogy-cta h2 {
+            color: var(--gold-light);
+            margin-top: 0;
+        }
+
+        .trilogy-cta p {
+            color: var(--text-main);
+            max-width: 650px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold-primary);
+            color: #000000;
+            font-weight: bold;
+            padding: 0.9rem 2rem;
             border-radius: 6px;
-            overflow-x: auto;
-            color: #79c0ff;
-            font-size: 0.85rem;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.2s;
         }
 
-        ul, ol { padding-left: 20px; }
-        li { margin-bottom: 8px; color: var(--text-main); }
-        a { color: var(--accent-blue); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        .cta-button:hover {
+            background-color: var(--gold-light);
+            transform: scale(1.02);
+        }
 
         footer {
-            border-top: 1px solid var(--border-gold);
             text-align: center;
             padding: 2rem;
             color: var(--text-muted);
             font-size: 0.85rem;
-            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 class="hero-title">⚡ Fintech Redirect & Payment Continuity Gateway</h1>
-        <p class="hero-subtitle">Institutional frameworks, legal dispute playbooks, and merchant recovery protocols for SaaS, E-Commerce, and High-Volume Merchants ($1M–$100M+ ARR).</p>
+        <h1 class="header-title">Fintech Redirect & Institutional Payment Continuity Gateway</h1>
+        <p class="header-subtitle">Enterprise-grade compliance frameworks, legal escalation playbooks, and multi-MID routing protocols for high-volume processors.</p>
         
-        <div class="badge-container">
-            <span class="badge">Visa VAMP 2026 Compliant</span>
-            <span class="badge">UCC § 4A-502 Framework</span>
-            <span class="badge">Institutional Edition</span>
+        <!-- Banner Graphic Integration -->
+        <div class="banner-container">
+            <img src="images/banner.jpg" alt="Dark Gold Fintech Payment Continuity Banner">
         </div>
     </header>
 
-    <div class="container">
+    <main>
+        <h2 class="section-title">Latest Technical Briefings</h2>
 
-        <!-- Main Bundle Offer -->
-        <div class="card featured-card">
-            <img src="images/Trilogy.jpg" alt="The Fintech Legal Trilogy">
-            <div class="card-body">
-                <span class="badge" style="width: fit-content; margin-bottom: 10px;">OFFICIAL BUNDLE — SAVE $33</span>
-                <h2 class="card-title" style="font-size: 1.8rem; color: var(--gold-primary);">The Fintech Legal Trilogy (2026 Edition)</h2>
-                <p class="card-text">The complete institutional recovery suite including all 3 operational manuals (72 pages, 42 compliance modules, legal demand templates, and UCC § 4A-502 escalation letters).</p>
-                <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" target="_blank">Get Complete Trilogy Suite ($149) →</a>
+        <div class="articles-grid">
+            <!-- Briefing #01 Card -->
+            <div class="articles-card article-card">
+                <span class="badge">Briefing #01</span>
+                <h3>Visa VAMP 2026 Compliance Guide</h3>
+                <p>Detailed analysis of Visa's updated VAMP thresholds, chargeback ratio calculation algorithms, and automated mitigation strategies.</p>
+                <a href="articles/visa-vamp-2026-compliance-guide.html" class="read-more">Read Briefing →</a>
+            </div>
+
+            <!-- Briefing #02 Card -->
+            <div class="article-card">
+                <span class="badge">Briefing #02</span>
+                <h3>Mastercard ANCRM Chargeback Compliance</h3>
+                <p>Operational roadmap for navigating Mastercard's Acquirer Native Dispute Resolution metrics and preventing processor-imposed fines.</p>
+                <a href="articles/mastercard-ancrm-chargeback-compliance.html" class="read-more">Read Briefing →</a>
+            </div>
+
+            <!-- Briefing #03 Card -->
+            <div class="article-card">
+                <span class="badge">Briefing #03</span>
+                <h3>Multi-MID Failover Protocols</h3>
+                <p>Architecture guidelines for redundant merchant routing, automated volume throttling, and zero-downtime payment processing.</p>
+                <a href="articles/multi-mid-failover-protocols.html" class="read-more">Read Briefing →</a>
             </div>
         </div>
 
-        <h2 style="color: var(--gold-primary); margin-top: 3.5rem; text-align: center;">Individual Manuals & Institutional Playbooks</h2>
-
-        <!-- Individual Books Grid -->
-        <div class="grid">
-            <!-- Book 1: Payment Survival Guide -->
-            <div class="card">
-                <img src="images/Payment survival guide.jpg" alt="The Payment Survival Guide">
-                <div class="card-body">
-                    <h3 class="card-title">Payment Survival Guide</h3>
-                    <p class="card-text">Unfreeze capital, pass risk audits, and navigate 180-day rolling reserves effectively.</p>
-                    <a href="https://unfreezepayments.gumroad.com/l/payment-survival-guide" class="btn" target="_blank">Order Now ($59)</a>
-                </div>
-            </div>
-
-            <!-- Book 2: Stripe Compliance Audit Playbook -->
-            <div class="card">
-                <img src="images/Stripe compliance.jpg" alt="Stripe Compliance Audit Playbook">
-                <div class="card-body">
-                    <h3 class="card-title">Stripe Compliance Audit Playbook</h3>
-                    <p class="card-text">Survive Stripe underwriting reviews, reinstate suspended accounts, and adjust VAMP ratios.</p>
-                    <a href="https://unfreezepayments.gumroad.com/l/stripe-compliance-audit-playbook" class="btn" target="_blank">Order Now ($59)</a>
-                </div>
-            </div>
-
-            <!-- Book 3: Payment Continuity Protocol -->
-            <div class="card">
-                <img src="images/Payment continuity.jpg" alt="Payment Continuity Protocol">
-                <div class="card-body">
-                    <h3 class="card-title">Payment Continuity Protocol</h3>
-                    <p class="card-text">72-Hour emergency failover: multi-MID routing, payment redundancy, and post-termination recovery.</p>
-                    <a href="https://unfreezepayments.gumroad.com/l/payment-continuity-protocol" class="btn" target="_blank">Order Now ($69)</a>
-                </div>
-            </div>
+        <div class="trilogy-cta">
+            <h2>The Fintech Legal Trilogy</h2>
+            <p>Complete legal playbooks, UCC § 4A-502 dispute templates, arbitration demand letters, and institutional risk recovery frameworks.</p>
+            <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="cta-button">Access The Full Trilogy on Gumroad</a>
         </div>
+<<<<<<< HEAD
 
         <!-- SECTION 1: LATEST SEO BRIEFINGS -->
         <div class="doc-section">
@@ -371,10 +313,12 @@
         </div>
 
     </div>
+=======
+    </main>
+>>>>>>> ffef0b7c8aded8b68b9e8c25b752854485187cb7
 
     <footer>
-        <p>&copy; 2026 Fintech Redirect & Legal Compliance. All rights reserved.</p>
-        <p>Disclaimer: The information provided is for educational and strategic purposes and does not constitute formal legal counsel.</p>
+        <p>© 2026 UnfreezeStripe / Fintech Redirect Advisory. All rights reserved.</p>
     </footer>
 
 </body>
