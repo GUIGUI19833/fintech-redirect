@@ -13,6 +13,9 @@ DATE_LIMITE = "31/12/2026"
 
 print(f"🎯 [OUROBOROS] Démarrage — Stratégie de Teasing & Protection IP (Objectif : {OBJECTIF_FINANCIER} €)")
 
+# --- CODE DE SUIVI UMAMI ---
+UMAMI_SCRIPT = '<script defer src="https://cloud.umami.is/script.js" data-website-id="4fc7af0c-096d-4914-bdc7-5861b7946bd1"></script>'
+
 # --- CATALOGUE DES PRODUITS GUMROAD ---
 GUMROAD_TRILOGY = "https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy"
 GUMROAD_CONTINUITY = "https://unfreezepayments.gumroad.com/l/payment-continuity-protocol"
@@ -30,8 +33,8 @@ BANQUE_SUJETS = [
         "gumroad_title": "Get The Payment Survival Guide ($59) →",
         "content_body": """
             <h2>1. Recognizing Algorithmic Risk Triggers</h2>
-            <p>Payment processors deploy automated machine learning models that continuously recalculate merchant risk scores based on chargeback velocity, refund spikes, and fulfillment latency. Recognizing precursor signals—such as out-of-cycle KYC verification requests or sudden payout schedule shifts—allows merchants to execute pre-emptive mitigation before cash flow is seized[cite: 7, 27].</p>
-            <div class='callout'><b>Operational Warning Window:</b> In over 80% of analyzed cases, merchants experience clear precursor signals 5 to 14 days prior to a total account freeze[cite: 28].</div>
+            <p>Payment processors deploy automated machine learning models that continuously recalculate merchant risk scores based on chargeback velocity, refund spikes, and fulfillment latency. Recognizing precursor signals—such as out-of-cycle KYC verification requests or sudden payout schedule shifts—allows merchants to execute pre-emptive mitigation before cash flow is seized[cite: 7].</p>
+            <div class='callout'><b>Operational Warning Window:</b> In over 80% of analyzed cases, merchants experience clear precursor signals 5 to 14 days prior to a total account freeze.</div>
             <h2>2. Why Frontline Support Fails</h2>
             <p>Standard merchant support tickets cannot override automated risk determinations. Reinstatement requires structured, objective compliance evidence[cite: 6]. <em>For the complete 15-document emergency underwriting checklist and direct escalation workflows, consult the full Survival Guide.</em></p>
         """
@@ -45,10 +48,10 @@ BANQUE_SUJETS = [
         "gumroad_title": "Access The Fintech Legal Trilogy ($149) →",
         "content_body": """
             <h2>1. The Legal Limits of Reserve Retention</h2>
-            <p>When processors terminate an account, they routinely freeze balances for 180 days under boilerplate clauses. However, under Uniform Commercial Code (UCC) § 4A-502 and common law principles, holding 100% of unencumbered funds when dispute ratios remain below network thresholds constitutes bad-faith retention[cite: 8].</p>
-            <div class='callout'><b>The 30-Day Escalation Pathway:</b> Recovery success relies on structured progression through formal legal demand letters, regulatory complaints (CFPB/FCA), and binding arbitration[cite: 8, 33].</div>
+            <p>When processors terminate an account, they routinely freeze balances for 180 days under boilerplate clauses. However, under Uniform Commercial Code (UCC) § 4A-502 and common law principles, holding 100% of unencumbered funds when dispute ratios remain below network thresholds constitutes bad-faith retention.</p>
+            <div class='callout'><b>The 30-Day Escalation Pathway:</b> Recovery success relies on structured progression through formal legal demand letters, regulatory complaints (CFPB/FCA), and binding arbitration.</div>
             <h2>2. Executing Legal Leverage</h2>
-            <p>Formal legal demands bypass standard support queues by engaging institutional compliance counsel[cite: 8]. <em>The exact legal demand letter templates, Small Claims strategies, and AAA arbitration frameworks are fully detailed in the Legal Trilogy.</em></p>
+            <p>Formal legal demands bypass standard support queues by engaging institutional compliance counsel. <em>The exact legal demand letter templates, Small Claims strategies, and AAA arbitration frameworks are fully detailed in the Legal Trilogy.</em></p>
         """
     },
     {
@@ -60,10 +63,10 @@ BANQUE_SUJETS = [
         "gumroad_title": "Get The Payment Continuity Protocol ($69) →",
         "content_body": """
             <h2>1. The Fragility of Single-Processor Models</h2>
-            <p>Relying exclusively on a single payment facilitator creates total operational exposure[cite: 10, 45]. High-volume digital enterprises must deploy a resilient multi-processor architecture that distributes volume across independent acquiring banks and separate corporate entities[cite: 10, 45].</p>
-            <div class='callout'><b>Uptime Benchmark:</b> Dual-MID load-balanced architectures achieve 99.98% operational uptime during sudden processor interruptions[cite: 10, 46].</div>
+            <p>Relying exclusively on a single payment facilitator creates total operational exposure. High-volume digital enterprises must deploy a resilient multi-processor architecture that distributes volume across independent acquiring banks and separate corporate entities.</p>
+            <div class='callout'><b>Uptime Benchmark:</b> Dual-MID load-balanced architectures achieve 99.98% operational uptime during sudden processor interruptions.</div>
             <h2>2. Compliant Load Balancing Rules</h2>
-            <p>Transaction routing must follow legitimate business segmentation (geography, product lines) rather than unapproved volume splitting designed to mask dispute ratios[cite: 10, 45]. <em>Step-by-step gateway routing specifications and multi-entity isolation blueprints are available in the Payment Continuity Protocol.</em></p>
+            <p>Transaction routing must follow legitimate business segmentation (geography, product lines) rather than unapproved volume splitting designed to mask dispute ratios. <em>Step-by-step gateway routing specifications and multi-entity isolation blueprints are available in the Payment Continuity Protocol.</em></p>
         """
     },
     {
@@ -75,10 +78,10 @@ BANQUE_SUJETS = [
         "gumroad_title": "Get The Stripe Compliance Audit Playbook ($59) →",
         "content_body": """
             <h2>1. Unified Card Network Thresholds</h2>
-            <p>Card brands enforce strict compliance metrics. Visa VAMP consolidates dispute and fraud ratios under unified monitoring parameters, while Mastercard ANCRM penalizes excessive chargeback levels through escalating monthly assessments[cite: 18, 71].</p>
-            <div class='callout'><b>Critical Metric:</b> Crossing a 0.75% to 0.9% dispute ratio triggers mandatory program placement and potential acquirer fines[cite: 7, 18, 60, 71].</div>
+            <p>Card brands enforce strict compliance metrics. Visa VAMP consolidates dispute and fraud ratios under unified monitoring parameters, while Mastercard ANCRM penalizes excessive chargeback levels through escalating monthly assessments.</p>
+            <div class='callout'><b>Critical Metric:</b> Crossing a 0.75% to 0.9% dispute ratio triggers mandatory program placement and potential acquirer fines[cite: 7].</div>
             <h2>2. Pre-Dispute Defense Systems</h2>
-            <p>Deploying automated alert systems (Verifi RDR and Ethoca) intercepts disputes before formal chargeback conversion occurs[cite: 6, 7, 44]. <em>For complete audit preparation checklists and statement descriptor optimization blueprints, access the Stripe Compliance Playbook.</em></p>
+            <p>Deploying automated alert systems (Verifi RDR and Ethoca) intercepts disputes before formal chargeback conversion occurs[cite: 6, 7]. <em>For complete audit preparation checklists and statement descriptor optimization blueprints, access the Stripe Compliance Playbook.</em></p>
         """
     }
 ]
@@ -156,6 +159,7 @@ for art in articles_enregistres:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{art['title']} | UnfreezeStripe Advisory</title>
     <meta name="description" content="{art['desc']}">
+    {UMAMI_SCRIPT}
     <style>
         :root {{
             --bg-dark: #0a0c10;
@@ -231,6 +235,7 @@ for entry in glossary_terms:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{entry['term']} | Fintech Legal Glossary</title>
     <meta name="description" content="{entry['definition']}">
+    {UMAMI_SCRIPT}
     <style>
         :root {{
             --bg-dark: #0a0c10;
@@ -307,6 +312,7 @@ index_full_html = f"""<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UnfreezeStripe | Institutional Fintech Risk Advisory</title>
     <meta name="description" content="Enterprise-grade compliance frameworks, legal escalation playbooks, and multi-MID routing protocols.">
+    {UMAMI_SCRIPT}
     <style>
         :root {{
             --bg-dark: #0a0c10;
@@ -542,8 +548,8 @@ print(f"✅ [OUROBOROS] Succès ! Teasers stratégiques générés et index mis 
 # --- DÉPLOIEMENT GIT ---
 try:
     subprocess.run(["git", "add", "."], check=True)
-    subprocess.run(["git", "commit", "-m", f"Ouroboros Teaser Strategy: High-value IP protected, Gumroad funnels active (Target: {OBJECTIF_FINANCIER}E)"], check=True)
+    subprocess.run(["git", "commit", "-m", f"Ouroboros Teaser Strategy: High-value IP protected, Umami analytics active (Target: {OBJECTIF_FINANCIER}E)"], check=True)
     subprocess.run(["git", "push"], check=True)
-    print("🚀 [OUROBOROS] Déploiement GitHub réussi avec les teasers de conversion !")
+    print("🚀 [OUROBOROS] Déploiement GitHub réussi avec l'analytique Umami !")
 except Exception as e:
     print(f"⚠️ [OUROBOROS] Info Git : {e}")
