@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +38,7 @@
         h2 { color: var(--gold-primary); font-size: 1.5rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
         p { color: var(--text-muted); }
 
-        /* Style de la bannière */
+        /* Bannière institutionnelle centrée */
         .hero-banner {
             text-align: center;
             margin: 2rem 0;
@@ -50,7 +50,7 @@
             border: 1px solid var(--border-gold);
         }
 
-        /* Grille des cartes (2x2) */
+        /* Grille 2x2 parfaitement alignée */
         .briefings-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -118,14 +118,15 @@
     </header>
 
     <div class="container">
-        <!-- Bannière visuelle intégrée -->
+        <!-- Bannière image (Vérifiez si l'image est à la racine ou dans un dossier images/) -->
         <div class="hero-banner">
-            <img src="images/banner-dark-gold.png" alt="Dark Gold Fintech Payment Continuity">
+            <img src="banner-dark-gold.png" alt="Dark Gold Fintech Payment Continuity" onerror="this.src='images/banner-dark-gold.png'">
         </div>
 
         <h2>Latest Technical Briefings</h2>
         
         <div class="briefings-grid">
+            <!-- Briefing 1 -->
             <div class="briefing-card">
                 <div>
                     <span class="briefing-tag">BRIEFING #01</span>
@@ -135,6 +136,7 @@
                 <a href="articles/recours-legal-fonds-geles-ucc-4a-502.html" class="read-link">Read Briefing →</a>
             </div>
 
+            <!-- Briefing 2 -->
             <div class="briefing-card">
                 <div>
                     <span class="briefing-tag">BRIEFING #02</span>
@@ -144,6 +146,7 @@
                 <a href="articles/mastercard-ancrm-chargeback-compliance.html" class="read-link">Read Briefing →</a>
             </div>
 
+            <!-- Briefing 3 -->
             <div class="briefing-card">
                 <div>
                     <span class="briefing-tag">BRIEFING #03</span>
@@ -153,6 +156,7 @@
                 <a href="articles/multi-mid-failover-protocols.html" class="read-link">Read Briefing →</a>
             </div>
 
+            <!-- Briefing 4 -->
             <div class="briefing-card">
                 <div>
                     <span class="briefing-tag">BRIEFING #04</span>
