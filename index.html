@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fintech Redirect & Payment Continuity Gateway (2026 Enterprise Edition)</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
     <style>
         :root {
             --bg-dark: #0a0c10;
@@ -303,52 +307,3 @@
         <div class="doc-section">
             <h2 class="section-heading" style="margin-top: 0;">🏛️ Regulatory Memento & Knowledge Base</h2>
             <p style="color: var(--text-muted); font-size: 0.95rem;">Essential legal frameworks and statutory standards governing merchant account operations and payment routing.</p>
-
-            <h3>1. UCC § 4A-502 & Bank Setoff Limitations</h3>
-            <p>Under <strong>Uniform Commercial Code (UCC) § 4A-502</strong>, a payment processor or acquiring bank may only hold merchant funds strictly necessary to cover quantifiable liabilities. Indefinite retention of 100% of receipts when chargeback ratios are below card scheme monitoring thresholds (1.0%) constitutes bad-faith conversion and breach of contract.</p>
-
-            <h3>2. Visa VAMP (2026) & Mastercard ANCRM Thresholds</h3>
-            <ul>
-                <li><strong>Visa VAMP (2026 Rules):</strong> Unified monitoring triggers at <strong>0.9% dispute ratio</strong> and <strong>$75,000 monthly fraud volume</strong>.</li>
-                <li><strong>Mastercard ANCRM Framework:</strong> Tier 1 monitoring at <strong>1.0% / 100 chargebacks</strong>; Tier 2 at <strong>1.5% / 300 chargebacks</strong> with escalating monthly risk assessments.</li>
-            </ul>
-
-            <h3>3. FTC Strict Liability & Merchant Compliance</h3>
-            <p>Under FTC enforcement standards, digital merchants relying on automated compliance suffer strict liability for processor oversight failures. Shielding operations requires robust KYC/AUP defense audits and structured multi-MID compartmentalization.</p>
-
-            <h3 style="margin-top: 1.5rem;">📖 Multi-Rail Architecture Standard</h3>
-<pre>
-                  ┌─────────────────────────────────────────┐
-                  │         Incoming Order / Checkout       │
-                  └────────────────────┬────────────────────┘
-                                       │
-                    ┌──────────────────┴──────────────────┐
-                    │ Client-side Failover Engine (JS/API)│
-                    └──────────────────┬──────────────────┘
-                                       │
-        ┌──────────────────────────────┼──────────────────────────────┐
-        ▼                              ▼                              ▼
-┌───────────────┐              ┌───────────────┐              ┌───────────────┐
-│ Primary MID   │              │ Secondary MID │              │ Emergency Rail│
-│ (Acquirer A)  │              │ (Acquirer B)  │              │ (ACH/BNPL/USDC│
-│ 60% Volume    │              │ 30% Volume    │              │ 10% Volume    │
-└───────┬───────┘              └───────┬───────┘              └───────┬───────┘
-        │ (Gateway Outage /            │ (Declines /                  │
-        │  Dispute Spike >0.75%)       │  Reserve Trigger)            │
-        └──────────────► AUTO-FAILOVER └──────────────► AUTO-FAILOVER ┘
-</pre>
-
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" style="display: inline-block; font-size: 1.1rem; padding: 15px 35px;" target="_blank">Access Complete 72-Page Legal Suite →</a>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Fintech Redirect & Legal Compliance. All rights reserved.</p>
-        <p>Disclaimer: The information provided is for educational and strategic purposes and does not constitute formal legal counsel.</p>
-    </footer>
-
-</body>
-</html>
