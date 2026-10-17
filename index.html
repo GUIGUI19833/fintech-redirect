@@ -168,6 +168,37 @@
             margin-top: 2rem;
         }
 
+        .article-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-item:last-child {
+            border-bottom: none;
+        }
+
+        .article-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .article-title:hover {
+            text-decoration: underline;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
         pre {
             background-color: #0d1117;
             border: 1px solid var(--border-color);
@@ -208,58 +239,83 @@
 
     <div class="container">
 
-        <!-- Offre Bundle Principale -->
+        <!-- Main Bundle Offer -->
         <div class="card featured-card">
             <img src="images/Trilogy.jpg" alt="The Fintech Legal Trilogy">
             <div class="card-body">
-                <span class="badge" style="width: fit-content; margin-bottom: 10px;">BUNDLE OFFICIEL — ÉCONOMISEZ $33</span>
+                <span class="badge" style="width: fit-content; margin-bottom: 10px;">OFFICIAL BUNDLE — SAVE $33</span>
                 <h2 class="card-title" style="font-size: 1.8rem; color: var(--gold-primary);">The Fintech Legal Trilogy (2026 Edition)</h2>
-                <p class="card-text">La suite institutionnelle complète regroupant les 3 manuels opérationnels (72 pages, 42 modules de conformité, modèles de mise en demeure et lettres d'escalade UCC § 4A-502).</p>
-                <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" target="_blank">Obtenir la Trilogie Complète ($149) →</a>
+                <p class="card-text">The complete institutional recovery suite including all 3 operational manuals (72 pages, 42 compliance modules, legal demand templates, and UCC § 4A-502 escalation letters).</p>
+                <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" target="_blank">Get Complete Trilogy Suite ($149) →</a>
             </div>
         </div>
 
-        <h2 style="color: var(--gold-primary); margin-top: 3.5rem; text-align: center;">Manuels Individuels & Playbooks Institutionnels</h2>
+        <h2 style="color: var(--gold-primary); margin-top: 3.5rem; text-align: center;">Individual Manuals & Institutional Playbooks</h2>
 
-        <!-- Grille des 3 livres -->
+        <!-- Individual Books Grid -->
         <div class="grid">
-            <!-- Livre 1 -->
+            <!-- Book 1 -->
             <div class="card">
                 <img src="images/Payment survival guide.jpg" alt="The Payment Survival Guide">
                 <div class="card-body">
                     <h3 class="card-title">Payment Survival Guide</h3>
-                    <p class="card-text">Débloquez vos capitaux, passez les audits de risques et gérez les réserves glissantes de 180 jours avec succès.</p>
-                    <a href="https://unfreezepayments.gumroad.com/l/payment-survival-guide" class="btn" target="_blank">Commander ($59)</a>
+                    <p class="card-text">Unfreeze capital, pass risk audits, and navigate 180-day rolling reserves effectively.</p>
+                    <a href="https://unfreezepayments.gumroad.com/l/payment-survival-guide" class="btn" target="_blank">Order Now ($59)</a>
                 </div>
             </div>
 
-            <!-- Livre 2 -->
+            <!-- Book 2 -->
             <div class="card">
                 <img src="images/Stripe compliance.jpg" alt="Stripe Compliance Audit Playbook">
                 <div class="card-body">
                     <h3 class="card-title">Stripe Compliance Audit Playbook</h3>
-                    <p class="card-text">Survivez aux révisions d'underwriting Stripe, débloquez vos comptes suspendus et ajustez votre taux VAMP.</p>
-                    <a href="https://unfreezepayments.gumroad.com/l/stripe-compliance-playbook" class="btn" target="_blank">Commander ($59)</a>
+                    <p class="card-text">Survive Stripe underwriting reviews, reinstate suspended accounts, and adjust VAMP ratios.</p>
+                    <a href="https://unfreezepayments.gumroad.com/l/stripe-compliance-playbook" class="btn" target="_blank">Order Now ($59)</a>
                 </div>
             </div>
 
-            <!-- Livre 3 -->
+            <!-- Book 3 -->
             <div class="card">
                 <img src="images/Payment continuity.jpg" alt="Payment Continuity Protocol">
                 <div class="card-body">
                     <h3 class="card-title">Payment Continuity Protocol</h3>
-                    <p class="card-text">Protocole de secours en 72 heures : réacheminement multi-MID, redondance de paiements et survie post-résiliation.</p>
-                    <a href="https://unfreezepayments.gumroad.com/l/payment-continuity-protocol" class="btn" target="_blank">Commander ($69)</a>
+                    <p class="card-text">72-Hour emergency failover: multi-MID routing, payment redundancy, and post-termination recovery.</p>
+                    <a href="https://unfreezepayments.gumroad.com/l/payment-continuity-protocol" class="btn" target="_blank">Order Now ($69)</a>
                 </div>
             </div>
         </div>
 
-        <!-- DOCUMENTATION TECHNIQUE ET JURIDIQUE -->
+        <!-- SECTION 1: LATEST SEO BRIEFINGS -->
         <div class="doc-section">
-            <h2 class="section-heading" style="margin-top: 0;">🏛️ Institutional Recovery & Multi-Rail Architecture</h2>
-            <p>When primary processors (Stripe, PayPal, Adyen, Shopify Payments) trigger automated 180-day reserves or merchant account terminations, client-side routing alone is insufficient. Our framework provides direct statutory escalation paths under federal and commercial guidelines.</p>
+            <h2 class="section-heading" style="margin-top: 0;">📰 Latest Institutional Briefings & SEO Hub</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Technical analysis, legal escalation strategies, and acquirer policy breakdowns generated by our regulatory research team.</p>
+            
+            <ul class="article-list">
+                <li class="article-item">
+                    <a href="articles/visa-vamp-2026-compliance-guide.html" class="article-title">Visa VAMP 2026 Compliance & Rapid Escalation: Unfreezing Merchant Accounts Under UCC § 4A-502</a>
+                    <div class="article-meta">Published: October 2026 | Focus: Visa VAMP 0.9% Threshold, UCC § 4A-502 Demand Letters, Reserve Unfreezing</div>
+                </li>
+            </ul>
+        </div>
 
-            <h2 class="section-heading">📖 Multi-Rail Architecture Diagram</h2>
+        <!-- SECTION 2: REGULATORY GLOSSARY & KNOWLEDGE BASE -->
+        <div class="doc-section">
+            <h2 class="section-heading" style="margin-top: 0;">🏛️ Regulatory Memento & Knowledge Base</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Essential legal frameworks and statutory standards governing merchant account operations and payment routing.</p>
+
+            <h3>1. UCC § 4A-502 & Bank Setoff Limitations</h3>
+            <p>Under <strong>Uniform Commercial Code (UCC) § 4A-502</strong>, a payment processor or acquiring bank may only hold merchant funds strictly necessary to cover quantifiable liabilities. Indefinite retention of 100% of receipts when chargeback ratios are below card scheme monitoring thresholds (1.0%) constitutes bad-faith conversion and breach of contract.</p>
+
+            <h3>2. Visa VAMP (2026) & Mastercard ANCRM Thresholds</h3>
+            <ul>
+                <li><strong>Visa VAMP (2026 Rules):</strong> Unified monitoring triggers at <strong>0.9% dispute ratio</strong> and <strong>$75,000 monthly fraud volume</strong>.</li>
+                <li><strong>Mastercard ANCRM Framework:</strong> Tier 1 monitoring at <strong>1.0% / 100 chargebacks</strong>; Tier 2 at <strong>1.5% / 300 chargebacks</strong> with escalating monthly risk assessments.</li>
+            </ul>
+
+            <h3>3. FTC Strict Liability & Merchant Compliance</h3>
+            <p>Under FTC enforcement standards, digital merchants relying on automated compliance suffer strict liability for processor oversight failures. Shielding operations requires robust KYC/AUP defense audits and structured multi-MID compartmentalization.</p>
+
+            <h3 style="margin-top: 1.5rem;">📖 Multi-Rail Architecture Standard</h3>
 <pre>
                   ┌─────────────────────────────────────────┐
                   │         Incoming Order / Checkout       │
@@ -281,22 +337,8 @@
         └──────────────► AUTO-FAILOVER └──────────────► AUTO-FAILOVER ┘
 </pre>
 
-            <h2 class="section-heading">⚖️ Legal & Statutory Standards</h2>
-            
-            <h3>1. UCC § 4A-502 & Bank Setoff Limitations</h3>
-            <p>Under <strong>Uniform Commercial Code (UCC) § 4A-502</strong>, a payment processor or acquiring bank may only hold merchant funds strictly necessary to cover quantifiable liabilities. Indefinite retention of 100% of receipts when chargeback ratios are below card scheme monitoring thresholds (1.0%) constitutes bad-faith conversion and breach of contract.</p>
-
-            <h3>2. Visa VAMP (2026) & Mastercard ANCRM Thresholds</h3>
-            <ul>
-                <li><strong>Visa VAMP (2026 Rules):</strong> Unified monitoring triggers at <strong>0.9% dispute ratio</strong> and <strong>$75,000 monthly fraud volume</strong>.</li>
-                <li><strong>Mastercard ANCRM Framework:</strong> Tier 1 monitoring at <strong>1.0% / 100 chargebacks</strong>; Tier 2 at <strong>1.5% / 300 chargebacks</strong> with escalating monthly risk assessments.</li>
-            </ul>
-
-            <h3>3. FTC Enforcement Standards</h3>
-            <p>Under FTC enforcement standards, digital merchants relying on automated compliance suffer strict liability for processor oversight failures. Shielding operations requires robust KYC/AUP defense audits and structured multi-MID compartmentalization.</p>
-
             <div style="text-align: center; margin-top: 40px;">
-                <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" style="display: inline-block; font-size: 1.1rem; padding: 15px 35px;" target="_blank">Get The Complete Fintech Legal Trilogy Now →</a>
+                <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" style="display: inline-block; font-size: 1.1rem; padding: 15px 35px;" target="_blank">Access Complete 72-Page Legal Suite →</a>
             </div>
         </div>
 
