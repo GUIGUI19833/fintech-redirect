@@ -1,140 +1,80 @@
 import os
-import re
+import datetime
+import subprocess
 
-# 1. Dossier de destination
 os.makedirs("articles", exist_ok=True)
-
-article_filename = "mastercard-ancrm-chargeback-compliance.html"
-article_path = os.path.join("articles", article_filename)
-
-# 2. Contenu HTML de l'Article Briefing #02
-article_html = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastercard ANCRM Compliance & Excessive Chargeback Mitigation (2026 Rules)</title>
-    
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="../images/favicon.png">
-
-    <style>
-        :root {
-            --bg-dark: #0a0c10;
-            --card-bg: #12161f;
-            --gold-primary: #d4af37;
-            --gold-light: #f3e5ab;
-            --text-main: #e6edf3;
-            --text-muted: #8b949e;
-            --border-gold: rgba(212, 175, 55, 0.3);
-            --accent-blue: #58a6ff;
-            --border-color: #30363d;
-        }
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-        }
-        header {
-            border-bottom: 1px solid var(--border-gold);
-            padding: 2rem 1rem;
-            text-align: center;
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(10, 12, 16, 1) 100%);
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2.5rem 1rem;
-        }
-        h1 { color: var(--gold-primary); font-size: 2.2rem; margin-bottom: 1rem; }
-        h2 { color: var(--gold-primary); font-size: 1.5rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
-        p { color: var(--text-main); margin-bottom: 1.2rem; }
-        .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
-        .cta-box {
-            background: var(--card-bg);
-            border: 2px solid var(--gold-primary);
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 3rem 0;
-        }
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
-            color: #000;
-            font-weight: bold;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-top: 15px;
-        }
-        a { color: var(--accent-blue); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .back-link { display: inline-block; margin-bottom: 1.5rem; font-weight: 500; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-    </style>
-</head>
-<body>
-    <header>
-        <span style="color: var(--gold-primary); font-weight: bold; letter-spacing: 1px; font-size: 0.85rem;">INSTITUTIONAL BRIEFING #02</span>
-        <h1 style="margin-top: 5px;">Mastercard ANCRM Thresholds & Chargeback Defense</h1>
-        <p style="color: var(--text-muted); margin: 0;">Navigating Acquirer Excessive Chargeback Programs & Reserve Escrows</p>
-    </header>
-
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Gateway Home</a>
-        <div class="meta">Published: October 2026 | Domain: Mastercard ANCRM, Acquirer Compliance, Dispute Reduction Frameworks</div>
-
-        <p>In addition to Visa's VAMP framework, high-volume online businesses operating across global acquiring networks face immediate risk under the <strong>Mastercard Acquirer Chargeback Monitoring Program (ANCRM)</strong>. Crossing ANCRM monitoring tiers triggers aggressive monthly fines levied on acquirers, which are immediately passed down to merchants alongside mandatory rolling reserves or MID freezes.</p>
-
-        <h2>1. ANCRM Monitoring Tiers and Trigger Metrics</h2>
-        <p>Mastercard classifies merchants into monitoring tiers based on two critical parameters evaluated at the end of each calendar month:</p>
-        <ul>
-            <li><strong>Tier 1 (ECM - Excessive Chargeback Merchant):</strong> Triggered when a MID reaches <strong>100 chargebacks</strong> and a chargeback-to-transaction ratio of <strong>1.0%</strong>.</li>
-            <li><strong>Tier 2 (HECM - High Excessive Chargeback Merchant):</strong> Triggered at 300 chargebacks and a <strong>1.5% ratio</strong>, bringing monthly scheme assessments exceeding $1000 per violation.</li>
-        </ul>
-
-        <h2>2. Defending Against Automated Processor Termination</h2>
-        <p>When an acquiring bank receives ANCRM notifications, underwriting algorithms routinely default to account termination or imposing 180-day rolling reserves to shield the institution from network fines. Reversing or preventing these actions requires structured compliance remediation plans (CRPs) submitted directly to acquirer risk committees.</p>
-
-        <div class="cta-box">
-            <h3 style="color: var(--gold-primary); margin-top: 0;">Access Full Dispute & Compliance Templates</h3>
-            <p style="color: var(--text-muted);">Get formal response templates, chargeback audit worksheets, and complete legal remediation protocols.</p>
-            <a href="https://unfreezepayments.gumroad.com/l/stripe-compliance-audit-playbook" class="btn" target="_blank">Get Stripe & Acquirer Audit Playbook ($59) →</a>
-        </div>
-
-        <h2>3. Multi-MID Failover Strategy for Mastercard Volume</h2>
-        <p>Operating a single merchant account with volume exceeding $250k/month without automatic routing redundancy exposes businesses to total operational shutdown upon ANCRM flag placement. Dynamic load-balancing across independent acquirers ensures volume remains below monitoring thresholds.</p>
-    </div>
-</body>
-</html>
-"""
-
-with open(article_path, "w", encoding="utf-8") as f:
-    f.write(article_html)
-
-print(f"[Ouroboros] Article #02 généré avec succès : {article_path}")
-
-# 3. Mise à jour automatique de index.html
 index_path = "index.html"
+gumroad_url = "https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy"
+
+# Objectif financier de l'exercice
+OBJECTIF_FINANCIER = 10000
+DATE_LIMITE = "31/12/2026"
+
+print(f"🎯 [OUROBOROS] Démarrage de la session - Objectif : {OBJECTIF_FINANCIER} € d'ici le {DATE_LIMITE}")
+
+articles_du_jour = [
+    {
+        "filename": "recours-legal-fonds-geles-ucc-4a-502.html",
+        "title": "Fonds bloqués par Stripe ou PayPal : Activer le recours UCC § 4A-502 en 48h",
+        "briefing_id": "INSTITUTIONAL BRIEFING #01",
+        "subtitle": "Guide juridique pour contester les rétentions abusives de trésorerie",
+        "focus": "UCC § 4A-502, Demandes formelles, Déblocage de réserves",
+        "content_html": "<p>Contestation formelle des rétentions abusives sous le cadre de l'UCC Article 4A pour accélérer les flux de trésorerie vers l'objectif de l'exercice.</p>"
+    },
+    {
+        "filename": "mastercard-ancrm-chargeback-compliance.html",
+        "title": "Mastercard ANCRM Compliance & Excessive Chargeback Mitigation (2026 Rules)",
+        "briefing_id": "INSTITUTIONAL BRIEFING #02",
+        "subtitle": "Navigating Acquirer Excessive Chargeback Programs & Reserve Escrows",
+        "focus": "Mastercard Tier 1/2 Thresholds, Dispute Audits, Reserve Escalations",
+        "content_html": "<p>Analyse des seuils ANCRM et des programmes de surveillance pour protéger le chiffre d'affaires des pénalités.</p>"
+    },
+    {
+        "filename": "multi-mid-failover-protocols.html",
+        "title": "Architecture Multi-MID et Failover : Garantir 99.98% de temps de fonctionnement",
+        "briefing_id": "INSTITUTIONAL BRIEFING #03",
+        "subtitle": "Stratégies d'ingénierie des risques pour la continuité des paiements",
+        "focus": "Routage dynamique, Redondance des passerelles, Load-balancing",
+        "content_html": "<p>Mise en place d'une architecture multi-acquéreur pour éliminer les interruptions de paiement et sécuriser les encaissements.</p>"
+    },
+    {
+        "filename": "etude-cas-recouvrement-147k.html",
+        "title": "Étude de cas : Récupération de 147 000 $ bloqués en réserve sous 41 jours",
+        "briefing_id": "INSTITUTIONAL BRIEFING #04",
+        "subtitle": "Retour d'expérience opérationnel sur la levée d'un gel de 180 jours",
+        "focus": "Cas Pratiques, Croissance rapide, Preuves de fulfillment",
+        "content_html": "<p>Retour d'expérience chiffré sur le déblocage rapide de réserves de 180 jours pour alimenter la trésorerie opérationnelle.</p>"
+    }
+]
+
+dark_gold_css = "body { background-color: #0a0c10; color: #e6edf3; font-family: sans-serif; padding: 40px; max-width: 800px; margin: auto; line-height: 1.6; } h1 { color: #d4af37; }"
+
 if os.path.exists(index_path):
     with open(index_path, "r", encoding="utf-8") as f:
-        content = f.read()
+        index_content = f.read()
+else:
+    index_content = '<ul class="article-list" id="seo-briefings-list"></ul>'
 
-    new_entry = """                <li class="article-item">
-                    <a href="articles/mastercard-ancrm-chargeback-compliance.html" class="article-title">Mastercard ANCRM Compliance & Excessive Chargeback Mitigation (2026 Rules)</a>
-                    <div class="article-meta">Published: October 2026 | Focus: Mastercard Tier 1/2 Thresholds, Dispute Audits, Reserve Escalations</div>
-                </li>"""
+for item in articles_du_jour:
+    article_path = os.path.join("articles", item["filename"])
+    article_html = f"<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'><title>{item['title']}</title><style>{dark_gold_css}</style></head><body><a href='../index.html'>← Retour</a><h1>{item['title']}</h1>{item['content_html']}<br><a href='{gumroad_url}'><b>Obtenir la Trilogy sur Gumroad (Objectif {OBJECTIF_FINANCIER}€) →</b></a></body></html>"
+    
+    with open(article_path, "w", encoding="utf-8") as f:
+        f.write(article_html)
+    
+    new_entry = f'<li><a href="articles/{item["filename"]}">{item["title"]}</a> (Objectif {OBJECTIF_FINANCIER}€)</li>'
+    if item['filename'] not in index_content and '<ul class="article-list" id="seo-briefings-list">' in index_content:
+        index_content = index_content.replace('<ul class="article-list" id="seo-briefings-list">', f'<ul class="article-list" id="seo-briefings-list">\n{new_entry}')
 
-    # Insertion en haut de la liste SEO si pas déjà présent
-    if "mastercard-ancrm-chargeback-compliance.html" not in content:
-        updated_content = content.replace('<ul class="article-list" id="seo-briefings-list">', f'<ul class="article-list" id="seo-briefings-list">\n{new_entry}')
-        with open(index_path, "w", encoding="utf-8") as f:
-            f.write(updated_content)
-        print("[Ouroboros] index.html mis à jour automatiquement avec l'article #02 !")
-    else:
-        print("[Ouroboros] L'article #02 existe déjà dans index.html.")
+with open(index_path, "w", encoding="utf-8") as f:
+    f.write(index_content)
+
+print(f"[Ouroboros] Succès ! 4 articles générés, index mis à jour pour l'objectif de {OBJECTIF_FINANCIER}€.")
+
+try:
+    subprocess.run(["git", "add", "."], check=True)
+    subprocess.run(["git", "commit", "-m", f"Ouroboros Session: 4 new briefings (Target: {OBJECTIF_FINANCIER}E)"], check=True)
+    subprocess.run(["git", "push"], check=True)
+    print("[Ouroboros] 🚀 Déploiement GitHub réussi !")
+except Exception as e:
+    print(f"[Ouroboros] Git info : {e}")
