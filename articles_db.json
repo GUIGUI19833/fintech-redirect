@@ -34,5 +34,14 @@
         "gumroad_link": "https://unfreezepayments.gumroad.com/l/stripe-compliance-audit-playbook",
         "gumroad_title": "Get The Stripe Compliance Audit Playbook ($59) \u2192",
         "content_body": "\n            <h2>1. Unified Card Network Thresholds</h2>\n            <p>Card brands enforce strict compliance metrics. Visa VAMP consolidates dispute and fraud ratios under unified monitoring parameters, while Mastercard ANCRM penalizes excessive chargeback levels through escalating monthly assessments[cite: 18, 71].</p>\n            <div class='callout'><b>Critical Metric:</b> Crossing a 0.75% to 0.9% dispute ratio triggers mandatory program placement and potential acquirer fines[cite: 7, 18, 60, 71].</div>\n            <h2>2. Pre-Dispute Defense Systems</h2>\n            <p>Deploying automated alert systems (Verifi RDR and Ethoca) intercepts disputes before formal chargeback conversion occurs[cite: 6, 7, 44]. <em>For complete audit preparation checklists and statement descriptor optimization blueprints, access the Stripe Compliance Playbook.</em></p>\n        "
+    },
+    {
+        "filename": "cross-border-acquiring-regulatory-arbitrage.html",
+        "briefing_id": "BRIEFING #05",
+        "title": "Cross-Border Acquiring & Regulatory Arbitrage in High-Risk Verticals",
+        "desc": "Structuring international entity setups to maintain uninterrupted card network sponsorship.",
+        "gumroad_link": "https://unfreezepayments.gumroad.com/l/payment-continuity-protocol",
+        "gumroad_title": "Get The Payment Continuity Protocol ($69) \u2192",
+        "content_body": "\n            <h2>1. Jurisdictional Routing Strategies</h2>\n            <p>Operating across multiple jurisdictions allows digital enterprises to optimize interchange fees and insulate operations from localized central bank interventions. Establishing local acquiring relationships requires strict adherence to regional licensing exemptions.</p>\n            <div class='callout'><b>Structural Resilience:</b> Multi-entity structuring separates high-risk processing flows from core IP holding entities.</div>\n            <h2>2. Mitigating Local Acquiring Shocks</h2>\n            <p>When regional regulators tighten oversight on digital assets or SaaS renewals, automated failovers ensure uninterrupted transaction flow. <em>Consult the Continuity Protocol for complete international entity structuring frameworks.</em></p>\n        "
     }
 ]

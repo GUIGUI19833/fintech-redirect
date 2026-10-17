@@ -13,8 +13,9 @@ DATE_LIMITE = "31/12/2026"
 
 print(f"🎯 [OUROBOROS] Démarrage — Stratégie de Teasing & Protection IP (Objectif : {OBJECTIF_FINANCIER} €)")
 
-# --- CODE DE SUIVI UMAMI ---
-UMAMI_SCRIPT = '<script defer src="https://cloud.umami.is/script.js" data-website-id="4fc7af0c-096d-4914-bdc7-5861b7946bd1"></script>'
+# --- CODE DE SUIVI UMAMI & FAVICON ---
+FAVICON_TAG = '<link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon.png">'
+UMAMI_SCRIPT = f'<script defer src="https://cloud.umami.is/script.js" data-website-id="4fc7af0c-096d-4914-bdc7-5861b7946bd1"></script>\n    {FAVICON_TAG}'
 
 # --- CATALOGUE DES PRODUITS GUMROAD ---
 GUMROAD_TRILOGY = "https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy"
@@ -22,7 +23,7 @@ GUMROAD_CONTINUITY = "https://unfreezepayments.gumroad.com/l/payment-continuity-
 GUMROAD_STRIPE_AUDIT = "https://unfreezepayments.gumroad.com/l/stripe-compliance-audit-playbook"
 GUMROAD_SURVIVAL = "https://unfreezepayments.gumroad.com/l/payment-survival-guide"
 
-# --- BANQUE DE SUJETS STRATÉGIQUES (TEASERS ISSUS DES OUVRAGES) ---
+# --- BANQUE ÉTENDUE DE SUJETS STRATÉGIQUES (TEASERS & FUTURS BRIEFINGS) ---
 BANQUE_SUJETS = [
     {
         "filename": "5-precursor-signals-processor-termination.html",
@@ -33,10 +34,10 @@ BANQUE_SUJETS = [
         "gumroad_title": "Get The Payment Survival Guide ($59) →",
         "content_body": """
             <h2>1. Recognizing Algorithmic Risk Triggers</h2>
-            <p>Payment processors deploy automated machine learning models that continuously recalculate merchant risk scores based on chargeback velocity, refund spikes, and fulfillment latency. Recognizing precursor signals—such as out-of-cycle KYC verification requests or sudden payout schedule shifts—allows merchants to execute pre-emptive mitigation before cash flow is seized[cite: 7].</p>
+            <p>Payment processors deploy automated machine learning models that continuously recalculate merchant risk scores based on chargeback velocity, refund spikes, and fulfillment latency. Recognizing precursor signals—such as out-of-cycle KYC verification requests or sudden payout schedule shifts—allows merchants to execute pre-emptive mitigation before cash flow is seized.</p>
             <div class='callout'><b>Operational Warning Window:</b> In over 80% of analyzed cases, merchants experience clear precursor signals 5 to 14 days prior to a total account freeze.</div>
             <h2>2. Why Frontline Support Fails</h2>
-            <p>Standard merchant support tickets cannot override automated risk determinations. Reinstatement requires structured, objective compliance evidence[cite: 6]. <em>For the complete 15-document emergency underwriting checklist and direct escalation workflows, consult the full Survival Guide.</em></p>
+            <p>Standard merchant support tickets cannot override automated risk determinations. Reinstatement requires structured, objective compliance evidence. <em>For the complete 15-document emergency underwriting checklist and direct escalation workflows, consult the full Survival Guide.</em></p>
         """
     },
     {
@@ -79,14 +80,44 @@ BANQUE_SUJETS = [
         "content_body": """
             <h2>1. Unified Card Network Thresholds</h2>
             <p>Card brands enforce strict compliance metrics. Visa VAMP consolidates dispute and fraud ratios under unified monitoring parameters, while Mastercard ANCRM penalizes excessive chargeback levels through escalating monthly assessments.</p>
-            <div class='callout'><b>Critical Metric:</b> Crossing a 0.75% to 0.9% dispute ratio triggers mandatory program placement and potential acquirer fines[cite: 7].</div>
+            <div class='callout'><b>Critical Metric:</b> Crossing a 0.75% to 0.9% dispute ratio triggers mandatory program placement and potential acquirer fines.</div>
             <h2>2. Pre-Dispute Defense Systems</h2>
-            <p>Deploying automated alert systems (Verifi RDR and Ethoca) intercepts disputes before formal chargeback conversion occurs[cite: 6, 7]. <em>For complete audit preparation checklists and statement descriptor optimization blueprints, access the Stripe Compliance Playbook.</em></p>
+            <p>Deploying automated alert systems (Verifi RDR and Ethoca) intercepts disputes before formal chargeback conversion occurs. <em>For complete audit preparation checklists and statement descriptor optimization blueprints, access the Stripe Compliance Playbook.</em></p>
+        """
+    },
+    {
+        "filename": "cross-border-acquiring-regulatory-arbitrage.html",
+        "briefing_id": "BRIEFING #05",
+        "title": "Cross-Border Acquiring & Regulatory Arbitrage in High-Risk Verticals",
+        "desc": "Structuring international entity setups to maintain uninterrupted card network sponsorship.",
+        "gumroad_link": GUMROAD_CONTINUITY,
+        "gumroad_title": "Get The Payment Continuity Protocol ($69) →",
+        "content_body": """
+            <h2>1. Jurisdictional Routing Strategies</h2>
+            <p>Operating across multiple jurisdictions allows digital enterprises to optimize interchange fees and insulate operations from localized central bank interventions. Establishing local acquiring relationships requires strict adherence to regional licensing exemptions.</p>
+            <div class='callout'><b>Structural Resilience:</b> Multi-entity structuring separates high-risk processing flows from core IP holding entities.</div>
+            <h2>2. Mitigating Local Acquiring Shocks</h2>
+            <p>When regional regulators tighten oversight on digital assets or SaaS renewals, automated failovers ensure uninterrupted transaction flow. <em>Consult the Continuity Protocol for complete international entity structuring frameworks.</em></p>
+        """
+    },
+    {
+        "filename": "stripe-radar-custom-rules-evasion.html",
+        "briefing_id": "BRIEFING #06",
+        "title": "Advanced Stripe Radar Custom Rules for False Positive Reduction",
+        "desc": "Tune machine learning filters to block fraudulent transactions without suffocating legitimate revenue.",
+        "gumroad_link": GUMROAD_STRIPE_AUDIT,
+        "gumroad_title": "Get The Stripe Compliance Audit Playbook ($59) →",
+        "content_body": """
+            <h2>1. Balancing Friction and Fraud Prevention</h2>
+            <p>Aggressive default fraud filters often block up to 12% of legitimate international orders due to generic IP or proxy flags. Implementing surgical Radar rules protects approval rates.</p>
+            <div class='callout'><b>Revenue Preservation:</b> Tuning risk score thresholds between 65 and 75 recovers high-value transactions while containing chargeback exposure.</div>
+            <h2>2. Behavioral Fingerprinting</h2>
+            <p>Deploying advanced metadata checks ensures high-intent buyers pass seamlessly through checkout without unnecessary 3D Secure friction. <em>Review the full rule library inside the Stripe Compliance Playbook.</em></p>
         """
     }
 ]
 
-# --- GESTION DE LA BASE DE DONNÉES LOCALE (ACCUMULATION) ---
+# --- GESTION DE LA BASE DE DONNÉES LOCALE (ACCUMULATION AUTOMATIQUE) ---
 if os.path.exists(db_path):
     with open(db_path, "r", encoding="utf-8") as f:
         articles_enregistres = json.load(f)
@@ -98,13 +129,18 @@ if not articles_enregistres:
     with open(db_path, "w", encoding="utf-8") as f:
         json.dump(articles_enregistres, f, indent=4)
 
-# Accumulation automatique du prochain sujet s'il en reste dans la banque
+# Accumulation automatique d'un NOUVEL article à chaque lancement s'il en reste dans la banque
+nouveau_ajoute = False
 filenames_actuels = [a["filename"] for a in articles_enregistres]
 for sujet in BANQUE_SUJETS:
     if sujet["filename"] not in filenames_actuels:
         articles_enregistres.append(sujet)
-        print(f"➕ [OUROBOROS] Nouvel article-teaser accumulé : {sujet['title']}")
+        print(f"➕ [OUROBOROS] Nouvel article-teaser généré et intégré : {sujet['title']}")
+        nouveau_ajoute = True
         break
+
+if not nouveau_ajoute:
+    print("ℹ️ [OUROBOROS] Tous les sujets de la banque actuelle ont déjà été intégrés. Synchronisation standard.")
 
 with open(db_path, "w", encoding="utf-8") as f:
     json.dump(articles_enregistres, f, indent=4)
@@ -283,7 +319,7 @@ for entry in glossary_terms:
     with open(gloss_path, "w", encoding="utf-8") as f:
         f.write(gloss_html)
 
-# --- GÉNÉRATION DE L'INDEX ---
+# --- GÉNÉRATION DE L'INDEX (AFFICHAGE DES 4 DERNIERS BRIEFINGS À LA UNE) ---
 derniers_articles = articles_enregistres[-4:]
 cards_html = ""
 for art in derniers_articles:
@@ -543,13 +579,13 @@ index_full_html = f"""<!DOCTYPE html>
 with open(index_path, "w", encoding="utf-8") as f:
     f.write(index_full_html)
 
-print(f"✅ [OUROBOROS] Succès ! Teasers stratégiques générés et index mis à jour.")
+print(f"✅ [OUROBOROS] Succès ! Teasers stratégiques générés, favicon injecté et index mis à jour.")
 
 # --- DÉPLOIEMENT GIT ---
 try:
     subprocess.run(["git", "add", "."], check=True)
-    subprocess.run(["git", "commit", "-m", f"Ouroboros Teaser Strategy: High-value IP protected, Umami analytics active (Target: {OBJECTIF_FINANCIER}E)"], check=True)
+    subprocess.run(["git", "commit", "-m", f"Ouroboros Teaser Strategy: Favicon added, auto-article generation active (Target: {OBJECTIF_FINANCIER}E)"], check=True)
     subprocess.run(["git", "push"], check=True)
-    print("🚀 [OUROBOROS] Déploiement GitHub réussi avec l'analytique Umami !")
+    print("🚀 [OUROBOROS] Déploiement GitHub réussi avec le nouveau briefing et le favicon !")
 except Exception as e:
     print(f"⚠️ [OUROBOROS] Info Git : {e}")
