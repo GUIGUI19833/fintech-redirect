@@ -1,19 +1,23 @@
 import os
+import re
 
-# 1. Création automatique du dossier articles
+# 1. Dossier de destination
 os.makedirs("articles", exist_ok=True)
 
-# 2. Nom et chemin de l'article
-article_filename = "visa-vamp-2026-compliance-guide.html"
+article_filename = "mastercard-ancrm-chargeback-compliance.html"
 article_path = os.path.join("articles", article_filename)
 
-# 3. Contenu HTML complet du premier article SEO
+# 2. Contenu HTML de l'Article Briefing #02
 article_html = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visa VAMP 2026 Compliance & Rapid Escalation: Unfreezing Merchant Accounts Under UCC § 4A-502</title>
+    <title>Mastercard ANCRM Compliance & Excessive Chargeback Mitigation (2026 Rules)</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
     <style>
         :root {
             --bg-dark: #0a0c10;
@@ -70,37 +74,41 @@ article_html = """<!DOCTYPE html>
         a { color: var(--accent-blue); text-decoration: none; }
         a:hover { text-decoration: underline; }
         .back-link { display: inline-block; margin-bottom: 1.5rem; font-weight: 500; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
     </style>
 </head>
 <body>
     <header>
-        <span style="color: var(--gold-primary); font-weight: bold; letter-spacing: 1px; font-size: 0.85rem;">INSTITUTIONAL BRIEFING #01</span>
-        <h1 style="margin-top: 5px;">Visa VAMP 2026 Compliance & Rapid Escalation</h1>
-        <p style="color: var(--text-muted); margin: 0;">Unfreezing Merchant Accounts Under UCC § 4A-502 and Multi-Rail Protocols</p>
+        <span style="color: var(--gold-primary); font-weight: bold; letter-spacing: 1px; font-size: 0.85rem;">INSTITUTIONAL BRIEFING #02</span>
+        <h1 style="margin-top: 5px;">Mastercard ANCRM Thresholds & Chargeback Defense</h1>
+        <p style="color: var(--text-muted); margin: 0;">Navigating Acquirer Excessive Chargeback Programs & Reserve Escrows</p>
     </header>
 
     <div class="container">
         <a href="../index.html" class="back-link">← Back to Gateway Home</a>
-        <div class="meta">Published: October 2026 | Regulatory Domain: Acquirer Risk, Visa VAMP Thresholds, Legal Demand Frameworks</div>
+        <div class="meta">Published: October 2026 | Domain: Mastercard ANCRM, Acquirer Compliance, Dispute Reduction Frameworks</div>
 
-        <p>When high-volume digital merchants and SaaS platforms cross the 0.9% dispute ratio or $75,000 monthly fraud volume under the <strong>Visa Acquirer Monitoring Program (VAMP 2026)</strong>, primary processors like Stripe or PayPal frequently trigger automated 180-day rolling reserves or total account terminations.</p>
+        <p>In addition to Visa's VAMP framework, high-volume online businesses operating across global acquiring networks face immediate risk under the <strong>Mastercard Acquirer Chargeback Monitoring Program (ANCRM)</strong>. Crossing ANCRM monitoring tiers triggers aggressive monthly fines levied on acquirers, which are immediately passed down to merchants alongside mandatory rolling reserves or MID freezes.</p>
 
-        <p>Client-side routing fails under these circumstances because acquirers invoke standard processing agreements to retain 100% of incoming capital. Overcoming this requires strict statutory escalation rather than standard merchant support tickets.</p>
+        <h2>1. ANCRM Monitoring Tiers and Trigger Metrics</h2>
+        <p>Mastercard classifies merchants into monitoring tiers based on two critical parameters evaluated at the end of each calendar month:</p>
+        <ul>
+            <li><strong>Tier 1 (ECM - Excessive Chargeback Merchant):</strong> Triggered when a MID reaches <strong>100 chargebacks</strong> and a chargeback-to-transaction ratio of <strong>1.0%</strong>.</li>
+            <li><strong>Tier 2 (HECM - High Excessive Chargeback Merchant):</strong> Triggered at 300 chargebacks and a <strong>1.5% ratio</strong>, bringing monthly scheme assessments exceeding $1000 per violation.</li>
+        </ul>
 
-        <h2>1. The Legal Limits of Processor Retention: UCC § 4A-502</h2>
-        <p>Under <strong>Uniform Commercial Code (UCC) § 4A-502</strong>, a financial institution or payment processor may only freeze or hold funds strictly necessary to cover quantifiable liabilities (such as confirmed chargebacks or impending refunds). Indefinite retention of entire settlement batches when chargeback ratios sit below contractual default thresholds constitutes bad-faith conversion and breach of contract.</p>
-
-        <h2>2. Tactical Execution: Issuing Formal Legal Demands</h2>
-        <p>Standard merchant support channels are hardcoded to stall escalations. Bypassing tier-1 support requires dispatching formal legal notice directly to acquirer compliance counsel citing statutory setoff limitations, demanding either immediate fund disbursement or transfer to a structured escrow.</p>
+        <h2>2. Defending Against Automated Processor Termination</h2>
+        <p>When an acquiring bank receives ANCRM notifications, underwriting algorithms routinely default to account termination or imposing 180-day rolling reserves to shield the institution from network fines. Reversing or preventing these actions requires structured compliance remediation plans (CRPs) submitted directly to acquirer risk committees.</p>
 
         <div class="cta-box">
-            <h3 style="color: var(--gold-primary); margin-top: 0;">Need the Complete 72-Page Operational Suite?</h3>
-            <p style="color: var(--text-muted);">Access exact legal demand templates, UCC § 4A-502 notice letters, and multi-MID failover routing blueprints.</p>
-            <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy" class="btn" target="_blank">Get The Fintech Legal Trilogy ($149) →</a>
+            <h3 style="color: var(--gold-primary); margin-top: 0;">Access Full Dispute & Compliance Templates</h3>
+            <p style="color: var(--text-muted);">Get formal response templates, chargeback audit worksheets, and complete legal remediation protocols.</p>
+            <a href="https://unfreezepayments.gumroad.com/l/stripe-compliance-audit-playbook" class="btn" target="_blank">Get Stripe & Acquirer Audit Playbook ($59) →</a>
         </div>
 
-        <h2>3. Multi-Rail Compartmentalization</h2>
-        <p>To insulate your cash flow against sudden processor purges, modern enterprise architecture must segregate incoming volume across primary acquirers, secondary regional rails, and emergency alternative payment methods.</p>
+        <h2>3. Multi-MID Failover Strategy for Mastercard Volume</h2>
+        <p>Operating a single merchant account with volume exceeding $250k/month without automatic routing redundancy exposes businesses to total operational shutdown upon ANCRM flag placement. Dynamic load-balancing across independent acquirers ensures volume remains below monitoring thresholds.</p>
     </div>
 </body>
 </html>
@@ -109,30 +117,24 @@ article_html = """<!DOCTYPE html>
 with open(article_path, "w", encoding="utf-8") as f:
     f.write(article_html)
 
-print(f"[Ouroboros] Article généré avec succès : {article_path}")
+print(f"[Ouroboros] Article #02 généré avec succès : {article_path}")
 
-# 4. Mise à jour automatique de index.html pour insérer le lien de l'article
+# 3. Mise à jour automatique de index.html
 index_path = "index.html"
 if os.path.exists(index_path):
     with open(index_path, "r", encoding="utf-8") as f:
-        index_content = f.read()
+        content = f.read()
 
-    new_article_snippet = f"""<li class="article-item">
-                    <a href="articles/{article_filename}" class="article-title">Visa VAMP 2026 Compliance & Rapid Escalation: Unfreezing Merchant Accounts Under UCC § 4A-502</a>
-                    <div class="article-meta">Published: October 2026 | Focus: Visa VAMP 0.9% Threshold, UCC § 4A-502 Demand Letters, Reserve Unfreezing</div>
+    new_entry = """                <li class="article-item">
+                    <a href="articles/mastercard-ancrm-chargeback-compliance.html" class="article-title">Mastercard ANCRM Compliance & Excessive Chargeback Mitigation (2026 Rules)</a>
+                    <div class="article-meta">Published: October 2026 | Focus: Mastercard Tier 1/2 Thresholds, Dispute Audits, Reserve Escalations</div>
                 </li>"""
 
-    placeholder = """<li class="article-item">
-                    <span style="color: var(--gold-light); font-weight: 500;">⚡ Initializing Content Pipeline...</span>
-                    <div class="article-meta">First institutional briefing publishing shortly via automated research pipeline.</div>
-                </li>"""
-
-    if placeholder in index_content:
-        updated_index = index_content.replace(placeholder, new_article_snippet)
+    # Insertion en haut de la liste SEO si pas déjà présent
+    if "mastercard-ancrm-chargeback-compliance.html" not in content:
+        updated_content = content.replace('<ul class="article-list" id="seo-briefings-list">', f'<ul class="article-list" id="seo-briefings-list">\n{new_entry}')
         with open(index_path, "w", encoding="utf-8") as f:
-            f.write(updated_index)
-        print("[Ouroboros] index.html mis à jour avec le nouveau briefing !")
+            f.write(updated_content)
+        print("[Ouroboros] index.html mis à jour automatiquement avec l'article #02 !")
     else:
-        print("[Ouroboros] Indication : Le lien de l'article est déjà présent ou le placeholder a évolué.")
-else:
-    print("[Ouroboros] Erreur : index.html introuvable.")
+        print("[Ouroboros] L'article #02 existe déjà dans index.html.")

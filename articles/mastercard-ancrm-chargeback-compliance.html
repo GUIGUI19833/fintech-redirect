@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastercard ANCRM Compliance & Excessive Chargeback Mitigation (2026 Rules)</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <style>
+        :root {
+            --bg-dark: #0a0c10;
+            --card-bg: #12161f;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --accent-blue: #58a6ff;
+            --border-color: #30363d;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        header {
+            border-bottom: 1px solid var(--border-gold);
+            padding: 2rem 1rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(10, 12, 16, 1) 100%);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem;
+        }
+        h1 { color: var(--gold-primary); font-size: 2.2rem; margin-bottom: 1rem; }
+        h2 { color: var(--gold-primary); font-size: 1.5rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
+        p { color: var(--text-main); margin-bottom: 1.2rem; }
+        .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
+        .cta-box {
+            background: var(--card-bg);
+            border: 2px solid var(--gold-primary);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+            color: #000;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+        a { color: var(--accent-blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; font-weight: 500; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <span style="color: var(--gold-primary); font-weight: bold; letter-spacing: 1px; font-size: 0.85rem;">INSTITUTIONAL BRIEFING #02</span>
+        <h1 style="margin-top: 5px;">Mastercard ANCRM Thresholds & Chargeback Defense</h1>
+        <p style="color: var(--text-muted); margin: 0;">Navigating Acquirer Excessive Chargeback Programs & Reserve Escrows</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Gateway Home</a>
+        <div class="meta">Published: October 2026 | Domain: Mastercard ANCRM, Acquirer Compliance, Dispute Reduction Frameworks</div>
+
+        <p>In addition to Visa's VAMP framework, high-volume online businesses operating across global acquiring networks face immediate risk under the <strong>Mastercard Acquirer Chargeback Monitoring Program (ANCRM)</strong>. Crossing ANCRM monitoring tiers triggers aggressive monthly fines levied on acquirers, which are immediately passed down to merchants alongside mandatory rolling reserves or MID freezes.</p>
+
+        <h2>1. ANCRM Monitoring Tiers and Trigger Metrics</h2>
+        <p>Mastercard classifies merchants into monitoring tiers based on two critical parameters evaluated at the end of each calendar month:</p>
+        <ul>
+            <li><strong>Tier 1 (ECM - Excessive Chargeback Merchant):</strong> Triggered when a MID reaches <strong>100 chargebacks</strong> and a chargeback-to-transaction ratio of <strong>1.0%</strong>.</li>
+            <li><strong>Tier 2 (HECM - High Excessive Chargeback Merchant):</strong> Triggered at 300 chargebacks and a <strong>1.5% ratio</strong>, bringing monthly scheme assessments exceeding $1000 per violation.</li>
+        </ul>
+
+        <h2>2. Defending Against Automated Processor Termination</h2>
+        <p>When an acquiring bank receives ANCRM notifications, underwriting algorithms routinely default to account termination or imposing 180-day rolling reserves to shield the institution from network fines. Reversing or preventing these actions requires structured compliance remediation plans (CRPs) submitted directly to acquirer risk committees.</p>
+
+        <div class="cta-box">
+            <h3 style="color: var(--gold-primary); margin-top: 0;">Access Full Dispute & Compliance Templates</h3>
+            <p style="color: var(--text-muted);">Get formal response templates, chargeback audit worksheets, and complete legal remediation protocols.</p>
+            <a href="https://unfreezepayments.gumroad.com/l/stripe-compliance-audit-playbook" class="btn" target="_blank">Get Stripe & Acquirer Audit Playbook ($59) →</a>
+        </div>
+
+        <h2>3. Multi-MID Failover Strategy for Mastercard Volume</h2>
+        <p>Operating a single merchant account with volume exceeding $250k/month without automatic routing redundancy exposes businesses to total operational shutdown upon ANCRM flag placement. Dynamic load-balancing across independent acquirers ensures volume remains below monitoring thresholds.</p>
+    </div>
+</body>
+</html>
