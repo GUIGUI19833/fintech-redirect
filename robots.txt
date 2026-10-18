@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://guigui19833.github.io/fintech-redirect/sitemap.xml
