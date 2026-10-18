@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    :root {
+        --card-bg: #12161f;
+        --gold-primary: #d4af37;
+        --text-main: #e6edf3;
+        --text-muted: #8b949e;
+        --border-gold: rgba(212, 175, 55, 0.3);
+        --accent-blue: #58a6ff;
+        --border-color: #30363d;
+        --danger-red: #f85149;
+        --safe-green: #2ea043;
+    }
+    body {
+        background-color: #0a0c10;
+        color: var(--text-main);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        margin: 0; padding: 1rem; line-height: 1.6;
+    }
+    .calc-box {
+        background: var(--card-bg);
+        border: 2px solid var(--gold-primary);
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .calc-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 15px;
+    }
+    @media (max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
+    .input-group { margin-bottom: 15px; }
+    .input-group label { display: block; color: var(--text-main); font-size: 0.9rem; margin-bottom: 6px; font-weight: 500; }
+    .input-group input {
+        width: 100%;
+        background: #0a0c10;
+        border: 1px solid var(--border-color);
+        color: var(--text-main);
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+    .input-group input:focus { border-color: var(--gold-primary); outline: none; }
+    .calc-result {
+        background: #0a0c10;
+        border: 1px solid var(--border-color);
+        padding: 15px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .metric-value { font-size: 2rem; font-weight: bold; margin: 10px 0; }
+    .status-warning { color: var(--gold-primary); font-size: 1.1rem; font-weight: bold; }
+    .status-danger { color: var(--danger-red); font-size: 1.1rem; font-weight: bold; }
+    .status-safe { color: var(--safe-green); font-size: 0.9rem; font-weight: bold; }
+    #ctaContainer {
+        background: rgba(248, 81, 73, 0.1);
+        border: 1px dashed var(--danger-red);
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        margin-top: 15px;
+    }
+    .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+        color: #000;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+<body>
+    <div class="calc-box">
+        <span style="color: var(--gold-primary); font-weight: bold; font-size: 0.75rem; letter-spacing: 1px; display: block; margin-bottom: 5px;">INTERACTIVE TOOL</span>
+        <h2 style="margin-top: 0; color: var(--gold-primary); font-size: 1.2rem;">Visa VAMP & Chargeback Risk Calculator</h2>
+        
+        <div class="calc-grid">
+            <div>
+                <div class="input-group">
+                    <label for="txCount">Monthly Transactions:</label>
+                    <input type="number" id="txCount" value="5000" min="1" oninput="calculateRisk()">
+                </div>
+                <div class="input-group">
+                    <label for="cbCount">Monthly Chargebacks:</label>
+                    <input type="number" id="cbCount" value="35" min="0" oninput="calculateRisk()">
+                </div>
+            </div>
+            <div class="calc-result">
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Estimated Dispute Ratio</span>
+                <div id="ratioDisplay" class="metric-value">0.70%</div>
+                <div id="statusDisplay" class="status-safe" aria-live="polite">Safe Standing (Below 0.9%)</div>
+            </div>
+        </div>
+        
+        <div id="ctaContainer" style="display: none;">
+            <p style="color: var(--danger-red); font-weight: bold; margin: 0 0 5px 0; font-size: 0.85rem;">⚠️ Warning: You exceed Visa VAMP thresholds.</p>
+            <a href="https://unfrozepayments.gumroad.com/l/payment-survival-guide" class="btn" target="_blank">Get The Survival Guide ($59) →</a>
+        </div>
+    </div>
+
+    <script>
+        function calculateRisk() {
+            const tx = parseFloat(document.getElementById('txCount').value) || 1;
+            const cb = parseFloat(document.getElementById('cbCount').value) || 0;
+            const ratio = (cb / tx) * 100;
+            
+            const ratioDisplay = document.getElementById('ratioDisplay');
+            const statusDisplay = document.getElementById('statusDisplay');
+            const ctaContainer = document.getElementById('ctaContainer');
+            
+            ratioDisplay.innerText = ratio.toFixed(2) + '%';
+            statusDisplay.className = '';
+            
+            if (ratio >= 0.9) {
+                statusDisplay.innerText = 'CRITICAL: VAMP Threshold Exceeded';
+                statusDisplay.classList.add('status-danger');
+                ctaContainer.style.display = 'block';
+            } else if (ratio >= 0.65) {
+                statusDisplay.innerText = 'WARNING: High Risk Zone';
+                statusDisplay.classList.add('status-warning');
+                ctaContainer.style.display = 'block';
+            } else {
+                statusDisplay.innerText = 'Safe Standing (Below 0.9%)';
+                statusDisplay.classList.add('status-safe');
+                ctaContainer.style.display = 'none';
+            }
+        }
+        calculateRisk();
+    </script>
+</body>
+</html>
