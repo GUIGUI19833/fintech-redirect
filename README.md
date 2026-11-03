@@ -14,7 +14,7 @@ Client-side emergency payment failover & dynamic multi-MID transaction routing i
 *When primary processors (Stripe, PayPal, Adyen, Shopify Payments) trigger automated 180-day reserves or merchant account terminations, client-side routing alone is insufficient.*
 
 <p align="center">
-  <img src="./assets/cover.jpg" alt="Merchant Dispute & Arbitration Suite UCC 4A-502" width="850">
+  <img src="images/cover.jpg" alt="Merchant Dispute & Arbitration Suite UCC 4A-502" width="850">
 </p>
 
 <p align="center">
