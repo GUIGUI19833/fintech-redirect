@@ -13,9 +13,17 @@ Client-side emergency payment failover & dynamic multi-MID transaction routing i
 
 *When primary processors (Stripe, PayPal, Adyen, Shopify Payments) trigger automated 180-day reserves or merchant account terminations, client-side routing alone is insufficient.*
 
-Get the complete, step-by-step operational playbooks and legal escalation dossiers to unfreeze capital, pass acquirer risk audits, and survive processor purges:
+<p align="center">
+  <img src="./assets/cover.jpg" alt="Merchant Dispute & Arbitration Suite UCC 4A-502" width="850">
+</p>
 
-👉 **[Download The Fintech Legal Trilogy (2026 Edition)](https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy)** *(3 Institutional Books — 72 Pages — 42 Operational Modules & Legal Demand Templates)*
+<p align="center">
+  <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy">
+    <img src="https://img.shields.io/badge/ACCESS_INSTITUTIONAL_SUITE-GUMROAD-D4AF37?style=for-the-badge&logo=gumroad&logoColor=black" alt="Access Institutional Suite on Gumroad">
+  </a>
+</p>
+
+> **Instant Digital Delivery:** 72-Page Comprehensive Framework + 15 Editable Legal Demand Templates (`.docx`) + VAMP 2026 Dispute Modeling Sheet (`.xlsx`).
 
 ---
 
@@ -56,7 +64,11 @@ For operators executing account reinstatements, formal legal demands, or multi-e
    - Accurate MCC Classification (MCC 7372, 5734, 5968, 8999)
    - 3DS 2.2 Liability Shift & Statement Descriptor Optimization
 
-👉 **[Access the Full 72-Page Institutional Suite on Gumroad](https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy)**
+<p align="center">
+  <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy">
+    <img src="https://img.shields.io/badge/DOWNLOAD_COMPLETE_TRILOGY_(72_PAGES)-D4AF37?style=for-the-badge&logo=gumroad&logoColor=black" alt="Download Complete Trilogy on Gumroad">
+  </a>
+</p>
 
 ---
 
