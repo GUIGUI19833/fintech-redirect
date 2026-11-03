@@ -19,7 +19,7 @@ Client-side emergency payment failover & dynamic multi-MID transaction routing i
 
 <p align="center">
   <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy">
-    <img src="https://img.shields.io/badge/ACCESS_INSTITUTIONAL_SUITE-GUMROAD-D4AF37?style=for-the-badge&logo=gumroad&logoColor=black" alt="Access Institutional Suite on Gumroad">
+    <img src="https://img.shields.io/badge/ACCESS_INSTITUTIONAL_SUITE-GUMROAD-D4AF37?style=for-the-badge&logo=gumroad&logoColor=black" alt="Access Institutional Suite on Gumroad" height="42">
   </a>
 </p>
 
@@ -57,4 +57,9 @@ For operators executing account reinstatements, formal legal demands, or multi-e
    - 12-Jurisdiction International Banking Grid (Delaware, London, Zurich, Singapore, Dubai)
 2. **The Payment Continuity Protocol (34 Pages / 16 Modules):**
    - 24-Hour Triage Protocol & Internal Crisis Incident Memos
-   - 1
+   - 15 Document Emergency Underwriting Dossier & Rush Cover Letter
+   - MATCH / TMF Database Exit Petition & Reason Code Remediation
+3. **The Stripe Compliance Audit Playbook (19 Pages / 13 Modules):**
+   - Stripe Radar Algorithmic Defense & Dispute Escalation
+   - Accurate MCC Classification (MCC 7372, 5734, 5968, 8999)
+   - 3DS 2
