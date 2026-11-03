@@ -62,4 +62,14 @@ For operators executing account reinstatements, formal legal demands, or multi-e
 3. **The Stripe Compliance Audit Playbook (19 Pages / 13 Modules):**
    - Stripe Radar Algorithmic Defense & Dispute Escalation
    - Accurate MCC Classification (MCC 7372, 5734, 5968, 8999)
-   - 3DS 2
+   - 3DS 2.2 Liability Shift & Statement Descriptor Optimization
+
+👉 [Access the Full 72-Page Institutional Suite on Gumroad](https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy)
+
+---
+
+## 📄 License & Disclaimer
+
+This project is licensed under the MIT License.
+
+*Disclaimer: This repository and associated guides are independent publications created for operational risk engineering and educational compliance planning. Not affiliated with, endorsed by, or sponsored by Stripe, Inc., PayPal Holdings, Inc., Visa Inc., or Mastercard Incorporated.*
