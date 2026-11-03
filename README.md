@@ -14,7 +14,7 @@ Client-side emergency payment failover & dynamic multi-MID transaction routing i
 *When primary processors (Stripe, PayPal, Adyen, Shopify Payments) trigger automated 180-day reserves or merchant account terminations, client-side routing alone is insufficient.*
 
 <p align="center">
-  <img src="images/cover.jpg" alt="Merchant Dispute & Arbitration Suite UCC 4A-502" width="850">
+  <img src="images/Trilogy.jpg" alt="The Fintech Legal Trilogy" width="850">
 </p>
 
 <p align="center">
@@ -57,23 +57,4 @@ For operators executing account reinstatements, formal legal demands, or multi-e
    - 12-Jurisdiction International Banking Grid (Delaware, London, Zurich, Singapore, Dubai)
 2. **The Payment Continuity Protocol (34 Pages / 16 Modules):**
    - 24-Hour Triage Protocol & Internal Crisis Incident Memos
-   - 15-Document Emergency Underwriting Dossier & Rush Cover Letter
-   - MATCH / TMF Database Exit Petition & Reason Code Remediation
-3. **The Stripe Compliance Audit Playbook (19 Pages / 13 Modules):**
-   - Stripe Radar Algorithmic Defense & Dispute Escalation
-   - Accurate MCC Classification (MCC 7372, 5734, 5968, 8999)
-   - 3DS 2.2 Liability Shift & Statement Descriptor Optimization
-
-<p align="center">
-  <a href="https://unfreezepayments.gumroad.com/l/fintech-legal-trilogy">
-    <img src="https://img.shields.io/badge/DOWNLOAD_COMPLETE_TRILOGY_(72_PAGES)-D4AF37?style=for-the-badge&logo=gumroad&logoColor=black" alt="Download Complete Trilogy on Gumroad">
-  </a>
-</p>
-
----
-
-## 📄 License & Disclaimer
-
-This project is licensed under the MIT License. 
-
-*Disclaimer: This repository and associated guides are independent publications created for operational risk engineering and educational compliance planning. Not affiliated with, endorsed by, or sponsored by Stripe, Inc., PayPal Holdings, Inc., Visa Inc., or Mastercard Incorporated.*
+   - 1
